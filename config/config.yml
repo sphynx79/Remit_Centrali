@@ -1,0 +1,31 @@
+defaults: &defaults
+  site: 'https://pip.ipex.it/PipWa/Front/GetAcerFeedsPower'
+
+development:
+  <<: *defaults
+  database:
+    name: 'transmission'
+    collection: 'remit_centrali'
+    adress: '127.0.0.1:27030'
+    log_level: "::Logger::INFO"
+  path:
+    file_dt_upd: './lastupdate_dev'
+    file_csv: './csv/remit.csv'
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  database:
+    name: 'transmission'
+    collection: 'remit_centrali'
+    adress1: '10.130.96.220:27018'
+    adress2: '10.130.96.220:27019'
+    adress3: '10.130.96.144:27018'
+    log_level: "::Logger::INFO"
+  path:
+    file_dt_upd: './lastupdate'
+    file_csv: './csv/remit.csv'
+
+
