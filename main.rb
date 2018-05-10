@@ -100,7 +100,7 @@ module RemitCentrali
 
       case severity
       when 'DEBUG'
-        string
+        pastel.cyan.bold(string)
       when 'WARN'
         pastel.magenta.bold(string)
       when 'INFO'
