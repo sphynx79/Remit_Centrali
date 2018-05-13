@@ -4,6 +4,19 @@
 
 $LOAD_PATH.unshift '.'
 
+require 'rubygems'
+require 'bundler/setup'
+require 'bootsnap'
+Bootsnap.setup(
+  cache_dir:            './cache',
+  development_mode:     'development',
+  load_path_cache:      true,
+  autoload_paths_cache: true,
+  disable_trace:        true,
+  compile_cache_iseq:   true,
+  compile_cache_yaml:   true
+)
+
 require 'active_support/core_ext/string/inflections'
 require 'gli'
 require 'lib/remit_centrali'
@@ -93,7 +106,8 @@ module RemitCentrali
 
   def set_env(command, global, options)
     if global[:enviroment] == 'development'
-      LightService::Configuration.logger = Logger.new(STDOUT)
+      LightService::Configuration.logger = Logger.new('NUL')
+      # LightService::Configuration.logger = Logger.new(STDOUT)
       ENV['GLI_DEBUG'] = 'true'
       require 'pry'
       require 'ap'

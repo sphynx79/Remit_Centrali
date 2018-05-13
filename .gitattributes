@@ -14,3 +14,4 @@ remit.xlsm export-ignore
 lastupdate_dev export-ignore
 .solargraph.yml export-ignore
 .rufo export-ignore
+cache export-ignore

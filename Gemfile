@@ -4,11 +4,15 @@
 
 source 'https://rubygems.org'
 
+gem 'activesupport'
+gem 'bootsnap', require: false
 gem 'gli'
 gem 'light-service'
 gem 'mongo'
 gem 'oj'
 gem 'ox'
+gem 'pastel'
+gem 'rcsv'
 gem 'settingslogic'
 
 group :development, :test do
