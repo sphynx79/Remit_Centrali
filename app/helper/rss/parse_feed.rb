@@ -33,7 +33,6 @@ class ParseFeed
       dt_upd = Time.parse(node.locate('ns1:publicationDateTime')[0].text).localtime
       dt_start = Time.parse(node.locate('ns1:event/ns1:eventStart')[0].text).localtime
       dt_end = Time.parse(node.locate('ns1:event/ns1:eventStop')[0].text).localtime
-      ap dt_start.class
 
       remits.push(
         msg_id: msg_id,

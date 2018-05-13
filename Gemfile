@@ -7,6 +7,7 @@ source 'https://rubygems.org'
 gem 'gli'
 gem 'light-service'
 gem 'mongo'
+gem 'oj'
 gem 'ox'
 gem 'settingslogic'
 

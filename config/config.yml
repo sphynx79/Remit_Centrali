@@ -1,5 +1,6 @@
 defaults: &defaults
   site: 'https://pip.ipex.it/PipWa/Front/GetAcerFeedsPower'
+  mapbox: 'https://api.mapbox.com/datasets/v1/browserino/cjaoj0nr54iq92wlosvaaki0y/features?access_token=sk.eyJ1IjoiYnJvd3NlcmlubyIsImEiOiJjamEzdjBxOGM5Nm85MzNxdG9mOTdnaDQ0In0.tMMxfE2W6-WCYIRzBmCVKg'
 
 development:
   <<: *defaults
@@ -11,6 +12,7 @@ development:
   path:
     file_dt_upd: './lastupdate_dev'
     file_csv: './csv/remit.csv'
+    csv_esporta: './csv/export.csv'
 
 test:
   <<: *defaults
@@ -27,5 +29,6 @@ production:
   path:
     file_dt_upd: './lastupdate'
     file_csv: './csv/remit.csv'
+    csv_esporta: './csv/export.csv'
 
 

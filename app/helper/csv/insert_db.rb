@@ -10,8 +10,10 @@ class InsertDb
     collection = ctx.db.collection(collection: RemitCentrali::Config.database.collection)
     bulk_up = []
     ctx.remits.each do |remit|
+      event_status = remit[:event_status] != 'Dismissed' ? 'Active' : 'Dismissed'
+
       doc = { msg_id: remit[:msg_id],
-              event_status: remit[:event_status],
+              event_status: event_status,
               market_participant: remit[:market_participant],
               unavailability_type: remit[:unavailability_type],
               etso: remit[:etso],
@@ -25,9 +27,6 @@ class InsertDb
               dt_start: remit[:dt_start],
               dt_end: remit[:dt_end] }
       bulk_up << { update_one: { filter: { msg_id: remit[:msg_id] }, update: doc, upsert: true, bypass_document_validation: true } }
-      # bulk_up << { insert_one: doc }
-      # result = collection.update_one({ msg_id: remit[:msg_id] }, doc, upsert: true, :bypass_document_validation: true )
-      # logger.debug(result)
     end
     result = collection.bulk_write(bulk_up)
     logger.debug("Inserito #{result.upserted_count} doc")

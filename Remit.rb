@@ -14,6 +14,7 @@ require 'pastel'
 require 'logger'
 require 'net/http'
 require 'ox'
+require 'oj'
 
 APP_ROOT = Pathname.new(File.expand_path('.', __dir__))
 APP_NAME = APP_ROOT.parent.basename.to_s
@@ -62,9 +63,30 @@ module RemitCentrali
     end
   end
 
+  desc 'Esporta in csv'
+  long_desc %(Esegue una esportazione delle remit centrali dal db)
+  command :esporta do |c|
+    c.desc 'tipo di esportazione (dismissed, active)'
+    c.flag %i[t type], required: false, default_value: ['active'], type: Array
+
+    c.desc 'data di inizio'
+    c.flag %i[sd start_date], required: false, type: String
+
+    c.desc 'data di fine'
+    c.flag %i[ed end_date], required: false, type: String
+
+    c.action do
+      RemitCentrali::Application.call(@env)
+    end
+  end
+
   pre do |global, command, options|
     init_log(global[:log])
     set_env(command, global, options)
+    if command.name == :esporta
+      check_export_date(options[:sd], options[:ed])
+      # options[:type] = check_export_type(options[:type])
+    end
     RemitCentrali::Initialization.call
     true
   end
@@ -114,6 +136,37 @@ module RemitCentrali
       end
     end
     Object.send :include, Log
+  end
+
+  def check_export_date(start_date, end_date)
+    if start_date.nil? && end_date.nil?
+      p 'Devi inserire una start date nella forma --sd dd/mm/yyyy'
+      p 'Devi inserire una end date nella forma --ed dd/mm/yyyy'
+      p 'Es: ruby Remit.rb esporta --sd 21/11/2016 --ed 23/11/2016'
+      exit!
+    end
+    if !start_date.nil? && !start_date.match(%r{^\d{2}\/\d{2}\/\d{4}$})
+      p 'Devi inserire una start date nella forma --sd dd/mm/yyyy'
+      p 'Es: ruby Remit.rb esporta --sd 21/11/2016 --ed 23/11/2016'
+      exit!
+    end
+    if !end_date.nil? && !end_date.match(%r{^\d{2}\/\d{2}\/\d{4}$})
+      p 'Devi inserire una end date nella forma --ed dd/mm/yyyy'
+      p 'Es: ruby Remit.rb esporta --sd 21/11/2016 --ed 23/11/2016'
+      exit!
+    end
+    if start_date.nil? && !end_date.nil?
+      p 'Hai inserito una data di fine ma non di inizio'
+      exit!
+    end
+    if end_date.nil? && !start_date.nil?
+      p 'Hai inserito una data di inizio ma non di fine'
+      exit!
+    end
+    if Date.parse(start_date) > Date.parse(end_date)
+      p 'Hai inserito una data di inizio maggiore della data di fine'
+      exit!
+    end
   end
 
   # Controllo se lo sto lanciandi come programma

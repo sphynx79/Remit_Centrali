@@ -4,7 +4,7 @@
 
 class CheckLastUpd
   extend LightService::Action
-expects :remits
+  expects :remits
   promises :last_read
 
   executed do |ctx|
