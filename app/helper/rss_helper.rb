@@ -11,7 +11,7 @@ module RssHelper
       [
         SiteConnection,
         ParseFeed,
-        # CheckLastUpd,
+        CheckLastUpd,
         ConnectDb,
         InsertDb
         # iterate(:links, [ClickDownload, SalvaFile]),

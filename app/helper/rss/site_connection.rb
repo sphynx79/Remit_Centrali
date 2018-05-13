@@ -7,6 +7,7 @@ class SiteConnection
   promises :body
 
   executed do |ctx|
+    logger.debug('Connesione al sito PIP')
     uri = URI.parse(RemitCentrali::Config.site)
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true

@@ -22,7 +22,7 @@ module EsportaHelper
     elsif !result.message.empty?
       logger.info result.message
     else
-      logger.info 'File scaricati corretamente'
+      logger.info 'Esportazione avvenuta con successo'
     end
   rescue StandardError => e
     logger.fatal '#' * 90 + "\n" + e.message + "\n" + '#' * 90

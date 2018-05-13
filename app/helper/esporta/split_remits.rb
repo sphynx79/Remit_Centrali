@@ -28,7 +28,7 @@ class SplitRemits
   promises :remits_hourly
 
   executed do |ctx|
-    # usare il for per le performance
+    logger.debug('Splitto la remit in modo da avere per ogni riga una ora di remit')
     ctx.remits_hourly = ctx.remits_fields.map do |remit|
       split_hourly(remit, ctx.start_date, ctx.end_date)
     end

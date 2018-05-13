@@ -10,6 +10,7 @@ class ReadCsv
   promises :remits
 
   executed do |ctx|
+    logger.debug('Leggo il file csv')
     file = "#{APP_ROOT}/#{RemitCentrali::Config.path.file_csv}"
     ctx.fail_and_return!("Non ho trovato il file #{file}") unless File.exist?(file)
     csv_data = File.open(file)

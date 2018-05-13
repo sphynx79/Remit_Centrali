@@ -8,6 +8,7 @@ class FetchRemit
   promises :remits
 
   executed do |ctx|
+    logger.debug('Cerco le remit presenti nel mio db per le date scelta')
     start_dt = Date.parse(ctx.start_date)
     end_dt = Date.parse(ctx.end_date)
     collection = ctx.db.collection(collection: RemitCentrali::Config.database.collection)

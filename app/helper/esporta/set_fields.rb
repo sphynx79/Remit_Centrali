@@ -8,6 +8,7 @@ class SetFields
   promises :remits_fields
 
   executed do |ctx|
+    logger.debug('Setto i campi da inserire nel mio csv')
     ctx.remits_fields = ctx.remits.map do |remit|
       field = {}
       etso = remit['etso']

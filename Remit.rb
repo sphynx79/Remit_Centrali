@@ -49,7 +49,7 @@ module RemitCentrali
   # switch %i[v verbose]
   #
   desc 'Log level [debug, info, warn, error, fatal]'
-  default_value 'info'
+  default_value 'debug'
   flag %i[l log], required: false
 
   desc 'Enviroment da usare [production, development]'

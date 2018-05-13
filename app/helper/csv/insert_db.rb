@@ -7,6 +7,7 @@ class InsertDb
   expects :remits, :db
 
   executed do |ctx|
+    logger.debug('Inserisco remit a DB')
     collection = ctx.db.collection(collection: RemitCentrali::Config.database.collection)
     bulk_up = []
     ctx.remits.each do |remit|

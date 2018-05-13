@@ -19,7 +19,7 @@ module CsvHelper
     elsif !result.message.empty?
       logger.info result.message
     else
-      logger.info 'File scaricati corretamente'
+      logger.info 'File csv letto corretamente'
     end
   rescue StandardError => e
     logger.fatal '#' * 90 + "\n" + e.message + "\n" + '#' * 90

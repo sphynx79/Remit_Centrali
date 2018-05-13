@@ -7,6 +7,7 @@ class GetAnagrafica
   promises :anagrafica
 
   executed do |ctx|
+    logger.debug('Mi connetto al sito di mapbox per scaricare anagrafica')
     uri = URI.parse(RemitCentrali::Config.mapbox)
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true

@@ -10,9 +10,10 @@ class ParseFeed
   promises :remits
 
   executed do |ctx|
-    feed = File.open('feed.xml', 'r').read
-    rss = RSS::Parser.parse(feed, false)
-    # rss = RSS::Parser.parse(ctx.body, false)
+    logger.debug('Parse fedd Rss')
+    # feed = File.open('feed.xml', 'r').read
+    # rss = RSS::Parser.parse(feed, false)
+    rss = RSS::Parser.parse(ctx.body, false)
     remits = []
     rss.items.each do |item|
       xml = item.description

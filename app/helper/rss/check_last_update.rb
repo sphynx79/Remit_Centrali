@@ -8,6 +8,7 @@ class CheckLastUpd
   promises :last_read
 
   executed do |ctx|
+    logger.debug('Controllo se ci sono nuove remit nei feed rss')
     last_msg_id = ctx.remits.last[:msg_id]
     file = "#{APP_ROOT}/#{RemitCentrali::Config.path.file_dt_upd}"
     if File.exist?(file)
