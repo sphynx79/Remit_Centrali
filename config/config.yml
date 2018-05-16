@@ -1,7 +1,12 @@
 defaults: &defaults
   site: 'https://pip.ipex.it/PipWa/Front/GetAcerFeedsPower'
   mapbox: 'https://api.mapbox.com/datasets/v1/browserino/cjaoj0nr54iq92wlosvaaki0y/features?access_token=sk.eyJ1IjoiYnJvd3NlcmlubyIsImEiOiJjamEzdjBxOGM5Nm85MzNxdG9mOTdnaDQ0In0.tMMxfE2W6-WCYIRzBmCVKg'
-
+  mail:
+    from: 'michele.boscolo@eni.com'
+    to: 'michele.boscolo@eni.com'
+    server: 'relay.eni.pri'
+    port: 25
+   
 development:
   <<: *defaults
   database:

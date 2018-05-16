@@ -7,6 +7,7 @@ $LOAD_PATH.unshift __dir__
 module RemitCentrali
   autoload :Log,            'remit_centrali/log'
   autoload :Config,         'remit_centrali/config'
+  autoload :Mail,           'remit_centrali/mail'
   autoload :Initialization, 'remit_centrali/initialization'
   autoload :Application,    'remit_centrali/application'
   autoload :BaseController, 'remit_centrali/base_controller'

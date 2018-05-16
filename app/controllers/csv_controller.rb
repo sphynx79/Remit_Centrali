@@ -6,6 +6,6 @@ class CsvController < RemitCentrali::BaseController
   include CsvHelper
 
   def call
-    CsvHelper.call
+    CsvHelper.call(@env)
   end
 end

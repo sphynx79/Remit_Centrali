@@ -3,17 +3,18 @@
 # frozen_string_literal: true
 
 require 'rss'
+require 'pry'
 
 class ParseFeed
   extend LightService::Action
-  expects :body
+  # expects :body
   promises :remits
 
   executed do |ctx|
     logger.debug('Parse fedd Rss')
-    # feed = File.open('feed.xml', 'r').read
-    # rss = RSS::Parser.parse(feed, false)
-    rss = RSS::Parser.parse(ctx.body, false)
+    feed = File.open('feed.xml', 'r').read
+    rss = RSS::Parser.parse(feed, false)
+    # rss = RSS::Parser.parse(ctx.body, false)
     remits = []
     rss.items.each do |item|
       xml = item.description

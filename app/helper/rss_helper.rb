@@ -6,7 +6,7 @@ Dir.glob(__dir__ + '/rss/' + '*.rb', &method(:require))
 
 module RssHelper
   extend LightService::Organizer
-  def self.call
+  def self.call(env)
     result = with({}).reduce(
       [
         SiteConnection,
@@ -14,7 +14,6 @@ module RssHelper
         CheckLastUpd,
         ConnectDb,
         InsertDb
-        # iterate(:links, [ClickDownload, SalvaFile]),
       ]
     )
     if result.failure?
@@ -22,10 +21,15 @@ module RssHelper
     elsif !result.message.empty?
       logger.info result.message
     else
-      logger.info 'File scaricati corretamente'
+      logger.info 'Feed RSS scaricati corretamente'
     end
   rescue StandardError => e
-    logger.fatal '#' * 90 + "\n" + e.message + "\n" + '#' * 90
-    e.backtrace[0..20].each { |x| logger.fatal x if x.include? APP_NAME }
+    msg = e.message + "\n"
+    e.backtrace.each do |x|
+      msg += x + "\n" if x.include? APP_NAME
+    end
+    logger.fatal msg
+    RemitCentrali::Mail.call('Errore imprevisto nello scaricamento feed RSS', msg) if env[:global_options][:mail]
+    exit! 1
   end
 end

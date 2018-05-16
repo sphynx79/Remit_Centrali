@@ -28,7 +28,7 @@ class ReadCsv
                'Published'            =>  { alias: :dt_upd, type: :date },
                'EventStart'           =>  { alias: :dt_start, type: :date },
                'EventStop'            =>  { alias: :dt_end, type: :date } }
-    ctx.remits = Rcsv.parse(csv_data, column_separator: ';', header: :use, row_as_hash: true, columns: column, only_listed_columns: true)
+    ctx.remits = Rcsv.pase(csv_data, column_separator: ';', header: :use, row_as_hash: true, columns: column, only_listed_columns: true)
     ctx.remits.freeze
   end
 end

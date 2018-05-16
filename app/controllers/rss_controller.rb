@@ -6,6 +6,6 @@ class RssController < RemitCentrali::BaseController
   include RssHelper
 
   def call
-    RssHelper.call
+    RssHelper.call(@env)
   end
 end

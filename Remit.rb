@@ -45,9 +45,6 @@ module RemitCentrali
   sort_help :manually
   wrap_help_text :one_line
 
-  # desc 'Setto se lanciarlo in verbose mode'
-  # switch %i[v verbose]
-  #
   desc 'Log level [debug, info, warn, error, fatal]'
   default_value 'debug'
   flag %i[l log], required: false
@@ -56,7 +53,11 @@ module RemitCentrali
   default_value 'development'
   flag %i[e enviroment], required: false, must_match: %w[production development]
 
-  desc 'Interfaccia da usare [gui, cli, scheduler]'
+  desc 'Abilita email in caso di errore imprevisto'
+  default_value false
+  switch :mail
+
+  desc 'Interfaccia da usare [cli, scheduler]'
   default_value 'cli'
   flag %i[i interface], required: false
 
@@ -105,14 +106,14 @@ module RemitCentrali
   end
 
   def set_env(command, global, options)
+    LightService::Configuration.logger = Logger.new('NUL')
     if global[:enviroment] == 'development'
-      LightService::Configuration.logger = Logger.new('NUL')
       # LightService::Configuration.logger = Logger.new(STDOUT)
       ENV['GLI_DEBUG'] = 'true'
       require 'pry'
       require 'ap'
     else
-      LightService::Configuration.logger = Logger.new('NUL')
+      # LightService::Configuration.logger = Logger.new('NUL')
       ENV['GLI_DEBUG'] = 'false'
     end
     ENV['APP_ENV'] = global[:enviroment]
@@ -120,7 +121,8 @@ module RemitCentrali
     controller = command.name.to_s
     @env = { controller: controller,
              action: action,
-             command_options: options }
+             command_options: options,
+             global_options: global }
   end
 
   def init_log(level)

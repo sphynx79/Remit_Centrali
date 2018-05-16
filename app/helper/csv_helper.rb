@@ -6,11 +6,12 @@ Dir.glob(__dir__ + '/csv/' + '*.rb', &method(:require))
 
 module CsvHelper
   extend LightService::Organizer
-  def self.call
+  def self.call(env)
     result = with({}).reduce(
       [
         ReadCsv,
         ConnectDb,
+        GetAnagrafica,
         InsertDb
       ]
     )
@@ -22,7 +23,12 @@ module CsvHelper
       logger.info 'File csv letto corretamente'
     end
   rescue StandardError => e
-    logger.fatal '#' * 90 + "\n" + e.message + "\n" + '#' * 90
-    e.backtrace[0..20].each { |x| logger.fatal x if x.include? APP_NAME }
+    msg = e.message + "\n"
+    e.backtrace.each do |x|
+      msg += x + "\n" if x.include? APP_NAME
+    end
+    logger.fatal msg
+    RemitCentrali::Mail.call('Errore imprevisto nella lettura CSV', msg) if env[:global_options][:mail]
+    exit! 1
   end
 end
