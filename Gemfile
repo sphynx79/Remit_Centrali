@@ -2,6 +2,8 @@
 # warn_indent: true
 # frozen_string_literal: true
 
+ruby '2.5.1'
+
 source 'https://rubygems.org'
 
 gem 'activesupport', '~>5.2.0'

@@ -9,7 +9,7 @@ require 'bundler/setup'
 require 'bootsnap'
 Bootsnap.setup(
   cache_dir:            './cache',
-  development_mode:     'development',
+  development_mode:     false,
   load_path_cache:      true,
   autoload_paths_cache: true,
   disable_trace:        true,
