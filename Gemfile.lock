@@ -90,5 +90,8 @@ DEPENDENCIES
   rufus-scheduler (~> 3.5.0)
   settingslogic (~> 2.0.9)
 
+RUBY VERSION
+   ruby 2.5.1p57
+
 BUNDLED WITH
    1.16.1

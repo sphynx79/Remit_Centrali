@@ -62,7 +62,7 @@ class Handler
 end
 
 # @todo diminuire la frequenza di rufus-scheduler
-scheduler = Rufus::Scheduler.new(frequency: '4m')
+scheduler = Rufus::Scheduler.new(frequency: '3m')
 
 def scheduler.on_error(job, error)
   $logger.warn("intercepted error in #{job.id}: #{error.message}")
