@@ -1,3 +1,9 @@
+## 1.0.2 (2018-05-23)
+### Added
+-  Aggiunto controllo se etso in anagrafica anche quando scarica gli rss  ( 2018-05-23 ) [ sphynx79]
+
+
+
 ## 1.0.1 (2018-05-17)
 ### Added
 -  Creato eseguibile per avviare lo scheduler  ( 2018-05-17 ) [ sphynx79]
