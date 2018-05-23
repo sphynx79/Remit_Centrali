@@ -13,6 +13,7 @@ module RssHelper
         ParseFeed,
         CheckLastUpd,
         ConnectDb,
+        GetAnagrafica,
         InsertDb
       ]
     )

@@ -15,7 +15,7 @@ gem 'oj', '~>3.6.0'
 gem 'ox', '~>2.9.2'
 gem 'pastel', '~>0.7.2'
 gem 'rcsv', '~>0.3.1'
-gem 'rufus-scheduler', '~>3.5.0'
+gem 'rufus-scheduler', '~>3.4.0'
 gem 'settingslogic', '~>2.0.9'
 
 group :development, :test do

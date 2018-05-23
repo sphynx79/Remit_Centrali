@@ -20,9 +20,6 @@ GEM
     et-orbi (1.1.1)
       tzinfo
     ffi (1.9.23)
-    fugit (1.1.1)
-      et-orbi (~> 1.1, >= 1.1.1)
-      raabro (~> 1.1)
     gli (2.17.1)
     hirb (0.7.3)
     i18n (1.0.1)
@@ -52,11 +49,10 @@ GEM
     pry-inline (1.0.4)
       pry (> 0.10.0, < 0.12.0)
       unicode (~> 0.4.4)
-    raabro (1.1.5)
     rb-readline (0.5.5)
     rcsv (0.3.1)
-    rufus-scheduler (3.5.0)
-      fugit (~> 1.1, >= 1.1.1)
+    rufus-scheduler (3.4.2)
+      et-orbi (~> 1.0)
     settingslogic (2.0.9)
     thread_safe (0.3.6)
     tty-color (0.4.2)
@@ -87,7 +83,7 @@ DEPENDENCIES
   pry-clipboard (~> 0.1.1)
   pry-inline (~> 1.0.4)
   rcsv (~> 0.3.1)
-  rufus-scheduler (~> 3.5.0)
+  rufus-scheduler (~> 3.4.0)
   settingslogic (~> 2.0.9)
 
 RUBY VERSION

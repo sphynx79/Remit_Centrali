@@ -31,7 +31,7 @@ end
 # STDOUT.sync = true
 # STDERR.sync = true
 
-ENV['TZ'] = 'Europe/Rome'
+ENV['TZ'] = 'UTC-2'
 
 class Handler
   attr_reader :action
@@ -49,7 +49,7 @@ class Handler
 
   def start_task(job)
     $logger.info "Start task #{action}:"
-    cmd = "#{RbConfig.ruby} Remit.rb --mail --interface=scheduler --log=debug --enviroment=production #{action} "
+    cmd = "#{RbConfig.ruby} Remit.rb --mail --interface=scheduler --log=info --enviroment=production #{action} "
     stdout, stderr, wait_thr = Open3.capture3(cmd)
 
     print stdout.strip.to_s if !stdout.nil? && (stdout != '')
