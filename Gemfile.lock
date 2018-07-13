@@ -43,6 +43,9 @@ GEM
     pry-bond (0.0.1)
       bond (~> 0.5)
       rb-readline (~> 0.5)
+    pry-byebug (3.6.0)
+      byebug (~> 10.0)
+      pry (~> 0.10)
     pry-clipboard (0.1.1)
       clipboard
       pry
@@ -80,6 +83,7 @@ DEPENDENCIES
   pastel (~> 0.7.2)
   pry (~> 0.11.3)
   pry-bond (~> 0.0.1)
+  pry-byebug (~> 3.6.0)
   pry-clipboard (~> 0.1.1)
   pry-inline (~> 1.0.4)
   rcsv (~> 0.3.1)

@@ -21,6 +21,7 @@ gem 'settingslogic', '~>2.0.9'
 group :development, :test do
   gem 'awesome_print', '~>1.8.0'
   gem 'byebug', '~>10.0.2'
+  gem 'pry-byebug', '~>3.6.0'
   gem 'colorize', '~>0.8.1'
   gem 'ffi', '~>1.9.3'
   gem 'hirb', '~>0.7.3'

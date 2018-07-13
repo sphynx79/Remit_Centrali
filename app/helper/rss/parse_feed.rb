@@ -48,9 +48,9 @@ class ParseFeed
         available_capacity: available_capacity,
         unaviable_capacity: unaviable_capacity,
         unavailability_reason: unavailability_reason,
-        dt_upd: dt_upd,
-        dt_start: dt_start,
-        dt_end: dt_end
+        dt_upd: dt_upd + dt_upd.utc_offset,
+        dt_start: dt_start + dt_start.utc_offset,
+        dt_end: dt_end + dt_end.utc_offset
       )
     end
     ctx.skip_remaining!('Non è presente nessuna remit da scaricare') if remits.empty?
