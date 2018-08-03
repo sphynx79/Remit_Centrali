@@ -19,6 +19,8 @@ class InsertDb
         logger.warn("Non ho trovato l'#{etso} in anagrafica, remit non inserita a DB")
         etso_no_censiti << etso 
       else
+        remit[:tipo] = anagrafica_unita["tipo"]
+        remit[:zona] = anagrafica_unita["zona"]
         result = collection.update_one({ msg_id: remit[:msg_id] }, remit, upsert: true)
         if !result.upserted_count.zero?
           insert += 1

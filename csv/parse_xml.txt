@@ -1,0 +1,10 @@
+From the documentation:
+
+doc2 = Ox.parse(xml)
+To read the contents of a file in Ruby you can use xml = IO.read('filename.xml') (among others). So:
+
+doc = Ox.parse(IO.read(filename))
+If your XML file is UTF-8 encoded, then alternatively:
+
+doc = Ox.parse( File.open(filename,"r:UTF-8",&:read) )
+

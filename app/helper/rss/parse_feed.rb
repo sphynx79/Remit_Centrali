@@ -32,9 +32,9 @@ class ParseFeed
       available_capacity = node.locate('ns1:capacity/ns1:availableCapacity')[0].text.to_f
       unaviable_capacity = node.locate('ns1:capacity/ns1:unavailableCapacity')[0].text.to_f
       unavailability_reason = node.locate('ns1:unavailabilityReason')[0].text
-      dt_upd = Time.parse(node.locate('ns1:publicationDateTime')[0].text).localtime
-      dt_start = Time.parse(node.locate('ns1:event/ns1:eventStart')[0].text).localtime
-      dt_end = Time.parse(node.locate('ns1:event/ns1:eventStop')[0].text).localtime
+      dt_upd = Time.parse(node.locate('ns1:publicationDateTime')[0].text)
+      dt_start = Time.parse(node.locate('ns1:event/ns1:eventStart')[0].text)
+      dt_end = Time.parse(node.locate('ns1:event/ns1:eventStop')[0].text)
 
       remits.push(
         msg_id: msg_id,
@@ -42,15 +42,15 @@ class ParseFeed
         market_participant: market_participant,
         unavailability_type: unavailability_type,
         etso: etso,
-        zona: zona,
+        # zona: zona,
         fuel_type: fuel_type,
         install_capacity: install_capacity,
         available_capacity: available_capacity,
         unaviable_capacity: unaviable_capacity,
         unavailability_reason: unavailability_reason,
-        dt_upd: dt_upd + dt_upd.utc_offset,
-        dt_start: dt_start + dt_start.utc_offset,
-        dt_end: dt_end + dt_end.utc_offset
+        dt_upd: dt_upd,
+        dt_start: dt_start,
+        dt_end: dt_end
       )
     end
     ctx.skip_remaining!('Non è presente nessuna remit da scaricare') if remits.empty?
