@@ -1,3 +1,6 @@
+## 1.0.4 (2018-08-07)
+
+
 ## 1.0.3 (2018-07-13)
 ### Changed
 -  corretto problema dell'ora tra utc e ita  ( 2018-07-13 ) [ sphynx79]
