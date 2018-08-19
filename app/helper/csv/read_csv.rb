@@ -3,7 +3,6 @@
 # frozen_string_literal: true
 
 require 'rcsv'
-require 'csv'
 
 class ReadCsv
   extend LightService::Action

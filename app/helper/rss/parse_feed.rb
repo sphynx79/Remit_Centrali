@@ -3,7 +3,6 @@
 # frozen_string_literal: true
 
 require 'rss'
-require 'pry'
 
 class ParseFeed
   extend LightService::Action
@@ -32,9 +31,9 @@ class ParseFeed
       available_capacity = node.locate('ns1:capacity/ns1:availableCapacity')[0].text.to_f
       unaviable_capacity = node.locate('ns1:capacity/ns1:unavailableCapacity')[0].text.to_f
       unavailability_reason = node.locate('ns1:unavailabilityReason')[0].text
-      dt_upd = Time.parse(node.locate('ns1:publicationDateTime')[0].text)
-      dt_start = Time.parse(node.locate('ns1:event/ns1:eventStart')[0].text)
-      dt_end = Time.parse(node.locate('ns1:event/ns1:eventStop')[0].text)
+      dt_upd = DateTime.parse(node.locate('ns1:publicationDateTime')[0].text)
+      dt_start = DateTime.parse(node.locate('ns1:event/ns1:eventStart')[0].text)
+      dt_end = DateTime.parse(node.locate('ns1:event/ns1:eventStop')[0].text)
 
       remits.push(
         msg_id: msg_id,

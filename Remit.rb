@@ -6,17 +6,6 @@ $LOAD_PATH.unshift '.'
 
 require 'rubygems'
 require 'bundler/setup'
-require 'bootsnap'
-Bootsnap.setup(
-  cache_dir:            './cache',
-  development_mode:     false,
-  load_path_cache:      true,
-  autoload_paths_cache: true,
-  disable_trace:        true,
-  compile_cache_iseq:   true,
-  compile_cache_yaml:   true
-)
-
 require 'active_support/core_ext/string/inflections'
 require 'gli'
 require 'lib/remit_centrali'
@@ -25,8 +14,8 @@ require 'settingslogic'
 require 'mongo'
 require 'pastel'
 require 'logger'
-require 'net/http'
 require 'ox'
+require 'net/http'
 require 'oj'
 
 APP_ROOT = Pathname.new(File.expand_path('.', __dir__))

@@ -13,13 +13,18 @@ module RssHelper
         ParseFeed,
         CheckLastUpd,
         ConnectDb,
+        GetCollection,
         GetAnagrafica,
-        InsertDb
+        iterate(:remits, [
+        SplitInDayAndHour,
+        CheckHasPreviousVersion,
+        InsertDocDb
+      ]),
       ]
     )
     if result.failure?
       logger.error result.message
-    elsif !result.message.empty?
+    elsif result.message
       logger.info result.message
     else
       logger.info 'Feed RSS scaricati corretamente'
@@ -27,7 +32,8 @@ module RssHelper
   rescue StandardError => e
     msg = e.message + "\n"
     e.backtrace.each do |x|
-      msg += x + "\n" if x.include? APP_NAME
+      # msg += x + "\n" if x.include? APP_NAME
+      msg += x + "\n"
     end
     logger.fatal msg
     RemitCentrali::Mail.call('Errore imprevisto nello scaricamento feed RSS', msg) if env[:global_options][:mail]
