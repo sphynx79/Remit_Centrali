@@ -15,7 +15,9 @@ module CsvHelper
         GetAnagrafica,
         iterate(:remits, [
         SplitInDayAndHour,
-        CheckHasPreviousVersion,
+        CheckLastHour,
+        CheckLastDay,
+        CheckLastDoc,
         InsertDocDb
       ]),
       ]

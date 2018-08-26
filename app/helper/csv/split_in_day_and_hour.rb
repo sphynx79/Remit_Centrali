@@ -31,21 +31,24 @@ class SplitInDayAndHour
     remit = ctx.remit
     start_date = remit[:dt_start].arrotonda(3600)
     end_date = remit[:dt_end].arrotonda(3600)
+    event_status = remit[:event_status]
     day = remit[:dt_start].to_date
     hours = []
+    remit[:last] = event_status != 'Dismissed' ?  1 : 0
+
 
     start_date.step(end_date, HOUR_STEP).each do |data|
       if day == data.to_date #=> sono nello stesso giorno, uso to_date perchè altrimenti mi vedeva anche le ore
         if end_date == data #=> sono arrivato alla fine inserisco il doc e esco
           unless hours.empty?
-            days << make_day(day, hours)
+            days << make_day(day, hours, event_status)
           end
           break
         end
         hour = data.hour + 1
         hours << make_hour(remit, data)
       else #=> sono nel giorno dopo
-        unless days << make_day(day, hours)
+        unless days << make_day(day, hours, event_status)
         end
         day += 1
         hour = data.hour + 1
@@ -60,11 +63,12 @@ class SplitInDayAndHour
     {data_hour: data , remit: remit[:unaviable_capacity].round(2), last: last.to_i}
   end
 
-  def self.make_day(day, hours)
+  def self.make_day(day, hours, event_status)
     # energia = hours.values.map { |h| h[:remit] }.sum
     # potenza = (energia / 24).round(1)
     # {data_day: day, data_string: day.strftime('%Y%m%d'), energia_mw: energia, potenza_mwh: potenza, hours: hours}
-    {data_day: day, data_string: day.strftime('%Y%m%d'), hours: hours}
+    last = event_status != 'Dismissed' ?  1 : 0
+    {data_day: day, data_string: day.strftime('%Y%m%d'), last: last.to_i, hours: hours}
   end
 
   private_class_method :make_hour, :make_day
