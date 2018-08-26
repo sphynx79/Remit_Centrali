@@ -1,3 +1,9 @@
+## 1.0.6 (2018-08-26)
+### Changed
+-  Ottimizzato pipeline per prendere solo last a diversi stati di granularita  ( 2018-08-26 ) [ sphynx79]
+
+
+
 ## 1.0.5 (2018-08-19)
 ### Changed
 -  cambiato algoritmo dentro il db per gestire le remit  ( 2018-08-19 ) [ sphynx79]
