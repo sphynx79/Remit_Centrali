@@ -1,3 +1,6 @@
+## 1.0.7 (2018-09-11)
+
+
 ## 1.0.6 (2018-08-26)
 ### Changed
 -  Ottimizzato pipeline per prendere solo last a diversi stati di granularita  ( 2018-08-26 ) [ sphynx79]
