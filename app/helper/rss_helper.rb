@@ -17,7 +17,9 @@ module RssHelper
         GetAnagrafica,
         iterate(:remits, [
         SplitInDayAndHour,
-        CheckHasPreviousVersion,
+        CheckLastHour,
+        CheckLastDay,
+        CheckLastDoc,
         InsertDocDb
       ]),
       ]

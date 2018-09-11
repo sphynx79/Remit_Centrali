@@ -2,12 +2,14 @@
 # warn_indent: true
 # frozen_string_literal: true
 
-class CheckHasPreviousVersion
+class CheckLastHour
   extend LightService::Action
   expects :remit, :collection
+  promises :days_change
 
   executed do |ctx|
     logger.debug("Controlla se ho già una versione precedente msg_id: #{ctx.remit[:msg_id]}")
+    ctx.days_change = []
     event_status = ctx.remit[:event_status] != 'Dismissed' ? 'Active' : 'Dismissed'
     etso         = ctx.remit[:etso]
     bulk_up      = []
@@ -17,8 +19,8 @@ class CheckHasPreviousVersion
         data_day = day[:data_day]
 
         # cerca se c'e almeno un doc con etso dt_flusso
-        query_etso_giorno_result = ctx.collection.find("etso": etso, event_status: 'Active', 'days' => { '$elemMatch' => { data_day: data_day } }).entries
-
+        query_etso_giorno_result = ctx.collection.find("etso": etso, event_status: 'Active', is_last: 1, 'days' => { '$elemMatch' => { data_day: data_day } }).entries
+        
         # se non trova nulla va al prossimo giorno
         next if query_etso_giorno_result.empty?
 
@@ -26,12 +28,21 @@ class CheckHasPreviousVersion
         day[:hours].each do |hour, _value|
           old_index_hour, old_index_dt_flusso, old_id = this_hour_last_exist(query_etso_giorno_result, data_day, hour)
           next unless old_index_hour
-          bulk_up << { update_one: { filter: { _id: old_id }, update: { '$set': { "days.#{old_index_dt_flusso}.hours.#{old_index_hour}.last": 0 } }, upsert: true, bypass_document_validation: true } }
-          # ctx.collection.update_one({_id: old_id},  {'$set': { "days.#{old_index_dt_flusso}.hours.#{hour}.last": 0 }})
+          bulk_up << { update_one: { filter: { _id: old_id }, 
+                                     update: { '$set': { "days.#{old_index_dt_flusso}.hours.#{old_index_hour}.is_last": 0 } }, 
+                                     upsert: true, 
+                                     bypass_document_validation: true 
+          }}
+          ctx.days_change << {id: old_id, index_day: old_index_dt_flusso }
+          # old_doc.update_one('$set': {"days.#{old_index_dt_flusso}.hours.#{old_index_hour}.is_last": 0} )
         end
+        ctx.collection.bulk_write(bulk_up, write: { w: 0 })
+        ctx.days_change.uniq!{|k| [k[:id], k[:index_day]]} unless ctx.days_change.empty?
       end
+      
+
     end
-    ctx.collection.bulk_write(bulk_up, write: { w: 0 })
+    
   end
 
   #
@@ -52,7 +63,7 @@ class CheckHasPreviousVersion
       day = doc.dig('days', index_data_day)
       index_hour = search_index_hour(day, hour[:data_hour]) 
       next if index_hour.nil?
-      return index_hour, index_data_day, doc['_id'] if day.dig('hours')[index_hour][:last] == 1
+      return index_hour, index_data_day, doc['_id'] if day.dig('hours')[index_hour][:is_last] == 1
     end
     false
   end

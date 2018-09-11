@@ -32,6 +32,7 @@ class InsertDocDb
              dt_upd: ctx.remit[:dt_upd],
              dt_start: ctx.remit[:dt_start],
              dt_end: ctx.remit[:dt_end],
+             is_last: ctx.remit[:is_last],
              days: ctx.remit[:days]
       }
               

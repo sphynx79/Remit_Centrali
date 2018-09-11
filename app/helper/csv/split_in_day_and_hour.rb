@@ -34,7 +34,7 @@ class SplitInDayAndHour
     event_status = remit[:event_status]
     day = remit[:dt_start].to_date
     hours = []
-    remit[:last] = event_status != 'Dismissed' ?  1 : 0
+    remit[:is_last] = event_status != 'Dismissed' ?  1 : 0
 
 
     start_date.step(end_date, HOUR_STEP).each do |data|
@@ -59,16 +59,16 @@ class SplitInDayAndHour
   end
 
   def self.make_hour(remit, data)
-    last = remit[:event_status] != 'Dismissed' ?  1 : 0
-    {data_hour: data , remit: remit[:unaviable_capacity].round(2), last: last.to_i}
+    is_last = remit[:event_status] != 'Dismissed' ?  1 : 0
+    {data_hour: data , remit: remit[:unaviable_capacity].round(2), is_last: is_last.to_i}
   end
 
   def self.make_day(day, hours, event_status)
     # energia = hours.values.map { |h| h[:remit] }.sum
     # potenza = (energia / 24).round(1)
     # {data_day: day, data_string: day.strftime('%Y%m%d'), energia_mw: energia, potenza_mwh: potenza, hours: hours}
-    last = event_status != 'Dismissed' ?  1 : 0
-    {data_day: day, data_string: day.strftime('%Y%m%d'), last: last.to_i, hours: hours}
+    is_last = event_status != 'Dismissed' ?  1 : 0
+    {data_day: day, data_string: day.strftime('%Y%m%d'), is_last: is_last.to_i, hours: hours}
   end
 
   private_class_method :make_hour, :make_day
