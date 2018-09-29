@@ -17,7 +17,7 @@ db.remit_centrali_test_v5.aggregate(
                         event_status: "Active"
                     },
                     {
-                    	last: 1
+                    	is_last: 1
                     },
                     {
                         dt_start: {
@@ -36,7 +36,7 @@ db.remit_centrali_test_v5.aggregate(
         },
         {
             $match: {
-                "days.last": 1
+                "days.is_last": 1
             }
         },
         {
@@ -65,7 +65,7 @@ db.remit_centrali_test_v5.aggregate(
         },
         {
             $match: {
-                "hours.last": 1
+                "hours.is_last": 1
             }
         },
         {

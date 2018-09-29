@@ -2,6 +2,7 @@
 # warn_indent: true
 # frozen_string_literal: true
 
+
 class CheckLastUpd
   extend LightService::Action
   expects :remits
@@ -27,7 +28,7 @@ class CheckLastUpd
   end
 
   rolled_back do |ctx|
-    file = "#{APP_ROOT}/#{Config.path.file_dt_upd}"
+    file = "#{APP_ROOT}/#{RemitCentrali::Config.path.file_dt_upd}"
     open(file, 'w') do |f|
       f.flock(File::LOCK_EX)
       f << ctx.last_read
