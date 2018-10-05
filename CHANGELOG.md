@@ -1,3 +1,9 @@
+## 1.0.8 (2018-10-05)
+### Added
+-  ottimizzato il backend i report sul frontend, in pratica creo dei micro db preaggregati  ( 2018-10-05 ) [ sphynx79]
+
+
+
 ## 1.0.7 (2018-09-11)
 
 
