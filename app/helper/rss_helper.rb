@@ -2,6 +2,7 @@
 # warn_indent: true
 # frozen_string_literal: true
 
+Dir.glob(__dir__ + '/share/' + '*.rb', &method(:require))
 Dir.glob(__dir__ + '/rss/' + '*.rb', &method(:require))
 
 module RssHelper
@@ -16,12 +17,18 @@ module RssHelper
         GetCollection,
         GetAnagrafica,
         iterate(:remits, [
-        SplitInDayAndHour,
-        CheckLastHour,
-        CheckLastDay,
-        CheckLastDoc,
-        InsertDocDb
-      ]),
+          SplitInDayAndHour,
+          CheckLastHour,
+          CheckLastDay,
+          CheckLastDoc,
+          InsertDocDb,
+        ]),
+        UpdateLastRemitCollection,
+        GetCollectionLast,
+        UpdateZonaHourlyCollection,
+        UpdateTecnologiaHourlyCollection,
+        UpdateZonaDailyCollection,
+        UpdateTecnologiaDailyCollection,
       ]
     )
     if result.failure?
@@ -42,3 +49,4 @@ module RssHelper
     exit! 1
   end
 end
+

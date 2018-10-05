@@ -3,20 +3,26 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.unshift '.'
+the_rest = ARGV
+
+# p first_arg
+env_param = the_rest.select{|x|x[/enviroment/]}[0]
+env = env_param.nil? ? "development" : env_param.split("=")[1]
 
 require 'rubygems'
 require 'bundler/setup'
+Bundler.require(:default, env.to_sym)
 require 'active_support/core_ext/string/inflections'
-require 'gli'
-require 'lib/remit_centrali'
-require 'light-service'
-require 'settingslogic'
-require 'mongo'
-require 'pastel'
-require 'logger'
-require 'ox'
 require 'net/http'
-require 'oj'
+require 'lib/remit_centrali'
+# require 'gli'
+# require 'light-service'
+# require 'settingslogic'
+# require 'mongo'
+# require 'pastel'
+# require 'logger'
+# require 'ox'
+# require 'oj'
 
 APP_ROOT = Pathname.new(File.expand_path('.', __dir__))
 APP_NAME = APP_ROOT.parent.basename.to_s

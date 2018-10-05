@@ -6,13 +6,12 @@ ruby '2.5.1'
 
 source 'https://rubygems.org'
 
-gem 'activesupport', '~>5.2.0'
-gem 'bootsnap', '~>1.3.1', require: false
-gem 'gli', '~>2.17.1'
+gem 'activesupport', '~>5.2.0', require: false
+gem 'gli', '~>2.18.0'
 gem 'light-service', '~>0.11.0'
-gem 'mongo', '~>2.6.1'
-gem 'oj', '~>3.6.4'
-gem 'ox', '~>2.9.4'
+gem 'mongo', '~>2.6.2'
+gem 'oj', '~>3.6.11'
+gem 'ox', '~>2.10.0'
 gem 'pastel', '~>0.7.2'
 gem 'rcsv', '~>0.3.1'
 gem 'rufus-scheduler', '~>3.5.1'

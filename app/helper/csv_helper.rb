@@ -2,6 +2,7 @@
 # warn_indent: true
 # frozen_string_literal: true
 
+Dir.glob(__dir__ + '/share/' + '*.rb', &method(:require))
 Dir.glob(__dir__ + '/csv/' + '*.rb', &method(:require))
 
 module CsvHelper
@@ -14,12 +15,18 @@ module CsvHelper
         GetCollection,
         GetAnagrafica,
         iterate(:remits, [
-        SplitInDayAndHour,
-        CheckLastHour,
-        CheckLastDay,
-        CheckLastDoc,
-        InsertDocDb
-      ]),
+          SplitInDayAndHour,
+          CheckLastHour,
+          CheckLastDay,
+          CheckLastDoc,
+          InsertDocDb,
+        ]),
+        UpdateLastRemitCollection,
+        GetCollectionLast,
+        UpdateZonaHourlyCollection,
+        UpdateTecnologiaHourlyCollection,
+        UpdateZonaDailyCollection,
+        UpdateTecnologiaDailyCollection,
       ]
     )
     if result.failure?
@@ -40,3 +47,4 @@ module CsvHelper
     exit! 1
   end
 end
+
