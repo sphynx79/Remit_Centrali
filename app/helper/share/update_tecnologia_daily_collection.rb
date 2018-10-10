@@ -101,5 +101,7 @@ class UpdateTecnologiaDailyCollection
       "$out": 'remit_centrali_daily_tecologia',
     }
   end
+
+  private_class_method :pipeline
 end
 

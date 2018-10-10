@@ -75,5 +75,7 @@ class UpdateLastRemitCollection
 
     pipeline
   end
+
+  private_class_method :pipeline
 end
 

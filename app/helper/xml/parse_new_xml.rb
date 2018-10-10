@@ -36,7 +36,6 @@ class ParseNewXml
     end
     ctx.new_remits = remits
     ctx.new_remits.freeze
-    File.open('new.yaml', 'w') {|f| f.write ctx.new_remits.to_yaml }
   end
 end
 

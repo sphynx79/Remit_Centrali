@@ -49,6 +49,9 @@ module XmlHelper
       logger.info 'File xml letto corretamente'
     end
   rescue StandardError => e
+    # eliminare ultimo file scaricato
+    last_file_xml = Dir.glob("#{APP_ROOT}/#{RemitCentrali::Config.path.download}*.xml").max_by {|f|  File.stat(f).mtime}
+    FileUtils.rm_f(last_file_xml)
     msg = e.message + "\n"
     e.backtrace.each do |x|
       # msg += x + "\n" if x.include? APP_NAME

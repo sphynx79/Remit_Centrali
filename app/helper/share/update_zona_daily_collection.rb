@@ -110,5 +110,7 @@ class UpdateZonaDailyCollection
       "$out": 'remit_centrali_daily_zona',
     }
   end
+
+  private_class_method :pipeline
 end
 
