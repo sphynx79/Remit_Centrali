@@ -1,3 +1,9 @@
+## 1.0.9 (2018-10-10)
+### Added
+-  Aggiunto supporto per lo scaricamento e lettura degli xml  ( 2018-10-10 ) [ sphynx79]
+
+
+
 ## 1.0.8 (2018-10-05)
 ### Added
 -  ottimizzato il backend i report sul frontend, in pratica creo dei micro db preaggregati  ( 2018-10-05 ) [ sphynx79]
