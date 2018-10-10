@@ -4,6 +4,7 @@
 
 class RemitExist
   extend LightService::Action
+  expects  :collection, :remit
   promises :remit_exist
 
   executed do |ctx|
