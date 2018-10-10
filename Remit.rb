@@ -64,6 +64,14 @@ module RemitCentrali
     end
   end
 
+  desc 'Scarica xml delle remit'
+  long_desc %(Scarica da internet il file xml di tutte le remit e le carica a db)
+  command :xml do |c|
+    c.action do
+      RemitCentrali::Application.call(@env)
+    end
+  end
+
   desc 'Scarica csv remit'
   long_desc %(Scarica da internet il file csv di tutte le remit e le carica a db)
   command :csv do |c|

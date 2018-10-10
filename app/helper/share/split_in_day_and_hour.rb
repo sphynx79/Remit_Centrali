@@ -23,10 +23,11 @@ end
 
 class SplitInDayAndHour
   extend LightService::Action
-  expects :remit
+  expects :remit, :has_new_remit 
 
   executed do |ctx|
     logger.debug('Creo il doc per la remit da inserire a DB')
+    ctx.has_new_remit ||= true
     days = []
     remit = ctx.remit
     start_date = remit[:dt_start].arrotonda(3600)

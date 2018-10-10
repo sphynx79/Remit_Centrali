@@ -8,7 +8,7 @@ class SiteConnection
 
   executed do |ctx|
     logger.debug('Connesione al sito PIP')
-    uri = URI.parse(RemitCentrali::Config.site)
+    uri = URI.parse(RemitCentrali::Config.url_rss)
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     response = http.get(uri.request_uri)

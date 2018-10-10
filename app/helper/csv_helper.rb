@@ -15,18 +15,24 @@ module CsvHelper
         GetCollection,
         GetAnagrafica,
         iterate(:remits, [
-          SplitInDayAndHour,
-          CheckLastHour,
-          CheckLastDay,
-          CheckLastDoc,
-          InsertDocDb,
+          RemitExist,
+          reduce_if(-> (ctx) { !ctx.remit_exist }, [
+            SplitInDayAndHour,
+            CheckLastHour,
+            CheckLastDay,
+            CheckLastDoc,
+            InsertDocDb,
+          ]),
         ]),
-        UpdateLastRemitCollection,
-        GetCollectionLast,
-        UpdateZonaHourlyCollection,
-        UpdateTecnologiaHourlyCollection,
-        UpdateZonaDailyCollection,
-        UpdateTecnologiaDailyCollection,
+        reduce_if(-> (ctx) { ctx.new_remit }, [
+          UpdateLastRemitCollection,
+          GetCollectionLast,
+          UpdateZonaHourlyCollection,
+          UpdateTecnologiaHourlyCollection,
+          UpdateZonaDailyCollection,
+          UpdateTecnologiaDailyCollection,
+        ]),
+
       ]
     )
     if result.failure?

@@ -1,0 +1,796 @@
+---
+- :id: '30102'
+  :msg_id: '19174_001'
+  :event_status: Dismissed
+  :market_participant: EP PRODUZIONE SPA
+  :unavailability_type: PLANNED
+  :etso: UP_CNTRNRGFRR_1
+  :zona: NORD
+  :fuel_type: Fossil Gas
+  :install_capacity: 145.0
+  :available_capacity: 9.0
+  :unaviable_capacity: 136.0
+  :unavailability_reason: Manutenzione
+  :dt_upd: !ruby/object:DateTime 2018-01-31 11:11:09.000000000 Z
+  :dt_start: !ruby/object:DateTime 2015-05-31 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2021-10-07 09:24:21.714018000 +02:00
+- :id: '30103'
+  :msg_id: '19174_002'
+  :event_status: Dismissed
+  :market_participant: EP PRODUZIONE SPA
+  :unavailability_type: PLANNED
+  :etso: UP_CNTRNRGFRR_1
+  :zona: NORD
+  :fuel_type: Fossil Gas
+  :install_capacity: 145.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 145.0
+  :unavailability_reason: Manutenzione
+  :dt_upd: !ruby/object:DateTime 2018-01-31 11:16:21.000000000 Z
+  :dt_start: !ruby/object:DateTime 2015-05-31 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2021-10-07 09:24:21.714018000 +02:00
+- :id: '30105'
+  :msg_id: '19174_003'
+  :event_status: Dismissed
+  :market_participant: EP PRODUZIONE SPA
+  :unavailability_type: PLANNED
+  :etso: UP_CNTRNRGFRR_1
+  :zona: NORD
+  :fuel_type: Fossil Gas
+  :install_capacity: 145.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 145.0
+  :unavailability_reason: Manutenzione
+  :dt_upd: !ruby/object:DateTime 2018-01-31 11:33:33.000000000 Z
+  :dt_start: !ruby/object:DateTime 2015-05-31 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2021-10-07 09:24:21.715018000 +02:00
+- :id: '30106'
+  :msg_id: '19174_004'
+  :event_status: Dismissed
+  :market_participant: EP PRODUZIONE SPA
+  :unavailability_type: PLANNED
+  :etso: UP_CNTRNRGFRR_1
+  :zona: NORD
+  :fuel_type: Fossil Gas
+  :install_capacity: 145.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 145.0
+  :unavailability_reason: Manutenzione
+  :dt_upd: !ruby/object:DateTime 2018-01-31 13:23:58.000000000 Z
+  :dt_start: !ruby/object:DateTime 2015-05-31 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2021-10-07 09:24:21.715018000 +02:00
+- :id: '30107'
+  :msg_id: '19174_005'
+  :event_status: Dismissed
+  :market_participant: EP PRODUZIONE SPA
+  :unavailability_type: PLANNED
+  :etso: UP_CNTRNRGFRR_1
+  :zona: NORD
+  :fuel_type: Fossil Gas
+  :install_capacity: 145.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 145.0
+  :unavailability_reason: Manutenzione
+  :dt_upd: !ruby/object:DateTime 2018-01-31 13:33:19.000000000 Z
+  :dt_start: !ruby/object:DateTime 2015-05-31 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2021-10-07 09:24:21.715018000 +02:00
+- :id: '30108'
+  :msg_id: '19174_006'
+  :event_status: Dismissed
+  :market_participant: EP PRODUZIONE SPA
+  :unavailability_type: PLANNED
+  :etso: UP_CNTRNRGFRR_1
+  :zona: NORD
+  :fuel_type: Fossil Gas
+  :install_capacity: 145.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 145.0
+  :unavailability_reason: Manutenzione
+  :dt_upd: !ruby/object:DateTime 2018-01-31 13:40:15.000000000 Z
+  :dt_start: !ruby/object:DateTime 2015-05-31 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2021-10-07 09:24:21.715018000 +02:00
+- :id: '30292'
+  :msg_id: '19174_007'
+  :event_status: Active
+  :market_participant: EP PRODUZIONE SPA
+  :unavailability_type: PLANNED
+  :etso: UP_CNTRNRGFRR_1
+  :zona: NORD
+  :fuel_type: Fossil Gas
+  :install_capacity: 145.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 145.0
+  :unavailability_reason: Manutenzione
+  :dt_upd: !ruby/object:DateTime 2018-02-05 08:01:19.000000000 Z
+  :dt_start: !ruby/object:DateTime 2015-05-31 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2021-10-07 09:24:21.715018000 +02:00
+- :id: '45465'
+  :msg_id: '28590_003'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_1
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 238.0
+  :available_capacity: 119.0
+  :unaviable_capacity: 119.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-05 07:39:20.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-13 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-31 22:59:59.000000000 Z
+- :id: '45468'
+  :msg_id: '28591_003'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_2
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 246.0
+  :available_capacity: 123.0
+  :unaviable_capacity: 123.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-05 07:39:20.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-13 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-31 09:29:59.000000000 Z
+- :id: '45485'
+  :msg_id: '28635_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_SGIACOMO_3
+  :zona: CSUD
+  :fuel_type: Hydro Pumped Storage
+  :install_capacity: 490.0
+  :available_capacity: 125.856
+  :unaviable_capacity: 364.144
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-05 10:00:08.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-09 07:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-09 09:59:59.000000000 Z
+- :id: '45533'
+  :msg_id: '28675_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 4.0
+  :unaviable_capacity: 141.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-06 20:52:09.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 00:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 00:59:59.000000000 Z
+- :id: '45534'
+  :msg_id: '28676_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 10.0
+  :unaviable_capacity: 135.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-06 20:52:09.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 01:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 01:59:59.000000000 Z
+- :id: '45535'
+  :msg_id: '28565_005'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_1
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 238.0
+  :available_capacity: 119.0
+  :unaviable_capacity: 119.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-06 20:52:09.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-09 21:59:59.000000000 Z
+- :id: '45537'
+  :msg_id: '28566_005'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_2
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 246.0
+  :available_capacity: 123.0
+  :unaviable_capacity: 123.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-06 20:52:10.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-09 21:59:59.000000000 Z
+- :id: '45541'
+  :msg_id: '28681_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_PIETRAFIT_5
+  :zona: CNOR
+  :fuel_type: Fossil Gas
+  :install_capacity: 364.8
+  :available_capacity: 35.0
+  :unaviable_capacity: 329.8
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-06 20:52:12.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 01:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 01:59:59.000000000 Z
+- :id: '45542'
+  :msg_id: '28682_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_PIETRAFIT_5
+  :zona: CNOR
+  :fuel_type: Fossil Gas
+  :install_capacity: 364.8
+  :available_capacity: 96.0
+  :unaviable_capacity: 268.8
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-06 20:52:12.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 02:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 02:59:59.000000000 Z
+- :id: '45549'
+  :msg_id: '28687_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_PROVVIDEN_1
+  :zona: CSUD
+  :fuel_type: Hydro Pumped Storage
+  :install_capacity: 139.0
+  :available_capacity: 36.72
+  :unaviable_capacity: 102.28
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 08:35:32.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 06:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 09:59:59.000000000 Z
+- :id: '45554'
+  :msg_id: '28692_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_BRNDSSUDCE_1
+  :zona: BRNN
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 605.0
+  :available_capacity: 480.0
+  :unaviable_capacity: 125.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 10:55:00.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-07 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 21:59:59.000000000 Z
+- :id: '45555'
+  :msg_id: '28693_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_BRNDSSUDCE_1
+  :zona: BRNN
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 605.0
+  :available_capacity: 480.0
+  :unaviable_capacity: 125.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 11:02:54.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-06 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-07 21:44:59.000000000 Z
+- :id: '45556'
+  :msg_id: '28675_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 4.0
+  :unaviable_capacity: 141.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:21.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-07 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 00:59:59.000000000 Z
+- :id: '45557'
+  :msg_id: '28676_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 145.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:21.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 01:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 09:59:59.000000000 Z
+- :id: '45558'
+  :msg_id: '28694_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 4.0
+  :unaviable_capacity: 141.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:21.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 10:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 10:59:59.000000000 Z
+- :id: '45559'
+  :msg_id: '28695_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 10.0
+  :unaviable_capacity: 135.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:22.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 11:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 11:59:59.000000000 Z
+- :id: '45560'
+  :msg_id: '28696_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_2
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 155.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 155.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:22.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-07 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 04:59:59.000000000 Z
+- :id: '45561'
+  :msg_id: '28697_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_2
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 155.0
+  :available_capacity: 8.0
+  :unaviable_capacity: 147.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:22.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 05:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 05:59:59.000000000 Z
+- :id: '45562'
+  :msg_id: '28698_001'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_2
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 155.0
+  :available_capacity: 11.0
+  :unaviable_capacity: 144.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:22.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 06:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 06:59:59.000000000 Z
+- :id: '45563'
+  :msg_id: '28699_001'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_PRIOLO_C_2
+  :zona: PRGP
+  :fuel_type: Fossil Gas
+  :install_capacity: 372.0
+  :available_capacity: 55.0
+  :unaviable_capacity: 317.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:22.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 04:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 04:59:59.000000000 Z
+- :id: '45564'
+  :msg_id: '28700_001'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_PRIOLO_C_2
+  :zona: PRGP
+  :fuel_type: Fossil Gas
+  :install_capacity: 372.0
+  :available_capacity: 97.0
+  :unaviable_capacity: 275.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:23.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 05:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 05:59:59.000000000 Z
+- :id: '45565'
+  :msg_id: '28687_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_PROVVIDEN_1
+  :zona: CSUD
+  :fuel_type: Hydro Pumped Storage
+  :install_capacity: 139.0
+  :available_capacity: 36.72
+  :unaviable_capacity: 102.28
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 12:32:23.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 06:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 09:59:59.000000000 Z
+- :id: '45566'
+  :msg_id: '28681_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_PIETRAFIT_5
+  :zona: CNOR
+  :fuel_type: Fossil Gas
+  :install_capacity: 364.8
+  :available_capacity: 35.0
+  :unaviable_capacity: 329.8
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 14:01:05.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 01:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 01:59:59.000000000 Z
+- :id: '45567'
+  :msg_id: '28682_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_PIETRAFIT_5
+  :zona: CNOR
+  :fuel_type: Fossil Gas
+  :install_capacity: 364.8
+  :available_capacity: 96.0
+  :unaviable_capacity: 268.8
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 14:01:06.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 02:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 02:59:59.000000000 Z
+- :id: '45568'
+  :msg_id: '28701_001'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_LCSELLACLE_5
+  :zona: NORD
+  :fuel_type: Fossil Gas
+  :install_capacity: 1407.0
+  :available_capacity: 1300.0
+  :unaviable_capacity: 107.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 15:33:57.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-09 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-10 21:59:59.000000000 Z
+- :id: '45569'
+  :msg_id: '28675_003'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 4.0
+  :unaviable_capacity: 141.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 17:06:48.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-07 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 00:59:59.000000000 Z
+- :id: '45570'
+  :msg_id: '28676_003'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 145.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 17:06:48.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 01:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 09:59:59.000000000 Z
+- :id: '45571'
+  :msg_id: '28694_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 4.0
+  :unaviable_capacity: 141.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 17:06:48.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 10:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 10:59:59.000000000 Z
+- :id: '45572'
+  :msg_id: '28695_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_1
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 145.0
+  :available_capacity: 10.0
+  :unaviable_capacity: 135.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 17:06:49.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 11:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 11:59:59.000000000 Z
+- :id: '45573'
+  :msg_id: '28696_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_2
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 155.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 155.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 17:06:49.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-07 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 04:59:59.000000000 Z
+- :id: '45574'
+  :msg_id: '28697_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_2
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 155.0
+  :available_capacity: 8.0
+  :unaviable_capacity: 147.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 17:06:49.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 05:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 05:59:59.000000000 Z
+- :id: '45575'
+  :msg_id: '28698_002'
+  :event_status: Dismissed
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_FUSINA_T_2
+  :zona: NORD
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 155.0
+  :available_capacity: 11.0
+  :unaviable_capacity: 144.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 17:06:49.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 06:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 06:59:59.000000000 Z
+- :id: '45576'
+  :msg_id: '28693_002'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_BRNDSSUDCE_1
+  :zona: BRNN
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 605.0
+  :available_capacity: 480.0
+  :unaviable_capacity: 125.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 18:05:53.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-06 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-07 18:14:59.000000000 Z
+- :id: '45577'
+  :msg_id: '28702_001'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_BRNDSSUDCE_1
+  :zona: BRNN
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 605.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 605.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 18:05:53.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-07 18:15:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-07 21:44:59.000000000 Z
+- :id: '45578'
+  :msg_id: '28692_002'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_BRNDSSUDCE_1
+  :zona: BRNN
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 605.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 605.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 18:39:56.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-07 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-08 21:59:59.000000000 Z
+- :id: '45579'
+  :msg_id: '28565_006'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_1
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 238.0
+  :available_capacity: 105.0
+  :unaviable_capacity: 133.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 21:35:09.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-09 21:59:59.000000000 Z
+- :id: '45580'
+  :msg_id: '28566_006'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_2
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 246.0
+  :available_capacity: 105.0
+  :unaviable_capacity: 141.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 21:35:09.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-09 21:59:59.000000000 Z
+- :id: '45581'
+  :msg_id: '28635_002'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_SGIACOMO_3
+  :zona: CSUD
+  :fuel_type: Hydro Pumped Storage
+  :install_capacity: 490.0
+  :available_capacity: 162.0
+  :unaviable_capacity: 328.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 21:35:10.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-09 06:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-09 13:59:59.000000000 Z
+- :id: '45582'
+  :msg_id: '28703_001'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_BRNDSSUDCE_1
+  :zona: BRNN
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 605.0
+  :available_capacity: 480.0
+  :unaviable_capacity: 125.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 23:16:47.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-10 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-11 21:59:59.000000000 Z
+- :id: '45583'
+  :msg_id: '28704_001'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_BRNDSSUDCE_4
+  :zona: BRNN
+  :fuel_type: Fossil Hard coal
+  :install_capacity: 605.0
+  :available_capacity: 300.0
+  :unaviable_capacity: 305.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-07 23:16:47.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-11 12:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-11 15:59:59.000000000 Z
+- :id: '45584'
+  :msg_id: '28705_001'
+  :event_status: Active
+  :market_participant: A2A S.p.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_CHIVASSO_2
+  :zona: NORD
+  :fuel_type: Fossil Gas
+  :install_capacity: 380.0
+  :available_capacity: 0.0
+  :unaviable_capacity: 380.0
+  :unavailability_reason: 'CHIVASSO_CH21 Vapore_riparazione arpe RH GVR22 - '
+  :dt_upd: !ruby/object:DateTime 2018-10-07 23:43:21.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-08 00:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-31 22:59:00.000000000 Z
+- :id: '45585'
+  :msg_id: '28706_001'
+  :event_status: Active
+  :market_participant: A2A S.p.A.
+  :unavailability_type: PLANNED
+  :etso: UP_LIRO_1
+  :zona: NORD
+  :fuel_type: Hydro Water Reservoir
+  :install_capacity: 126.0
+  :available_capacity: 110.0
+  :unaviable_capacity: 16.0
+  :unavailability_reason: '_Isolato Madesimo gr. 1_Intero '
+  :dt_upd: !ruby/object:DateTime 2018-10-07 23:46:00.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-24 07:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-24 15:00:00.000000000 Z
+- :id: '45586'
+  :msg_id: '28590_004'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_1
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 238.0
+  :available_capacity: 119.0
+  :unaviable_capacity: 119.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-08 06:57:46.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-15 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-31 22:59:59.000000000 Z
+- :id: '45587'
+  :msg_id: '28707_001'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_1
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 238.0
+  :available_capacity: 105.0
+  :unaviable_capacity: 133.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-08 06:57:46.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-13 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-15 21:59:59.000000000 Z
+- :id: '45588'
+  :msg_id: '28591_004'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_2
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 246.0
+  :available_capacity: 123.0
+  :unaviable_capacity: 123.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-08 06:57:46.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-15 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-31 09:29:59.000000000 Z
+- :id: '45589'
+  :msg_id: '28708_001'
+  :event_status: Active
+  :market_participant: ENEL PRODUZIONE S.P.A.
+  :unavailability_type: UNPLANNED
+  :etso: UP_MONTALTO_2
+  :zona: CSUD
+  :fuel_type: Fossil Gas
+  :install_capacity: 246.0
+  :available_capacity: 105.0
+  :unaviable_capacity: 141.0
+  :unavailability_reason: UNPLANNED UNAVAILABILITY
+  :dt_upd: !ruby/object:DateTime 2018-10-08 06:57:46.000000000 Z
+  :dt_start: !ruby/object:DateTime 2018-10-13 22:00:00.000000000 Z
+  :dt_end: !ruby/object:DateTime 2018-10-15 21:59:59.000000000 Z

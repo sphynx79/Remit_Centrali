@@ -1,5 +1,6 @@
 defaults: &defaults
-  site: 'https://pip.ipex.it/PipWa/Front/GetAcerFeedsPower'
+  url_rss: 'https://pip.ipex.it/PipWa/Front/GetAcerFeedsPower'
+  url_xml: 'https://pip.ipex.it/PipWa/Front/GetXmlStream' 
   mapbox: 'https://api.mapbox.com/datasets/v1/browserino/cjaoj0nr54iq92wlosvaaki0y/features?access_token=sk.eyJ1IjoiYnJvd3NlcmlubyIsImEiOiJjamEzdjBxOGM5Nm85MzNxdG9mOTdnaDQ0In0.tMMxfE2W6-WCYIRzBmCVKg'
   mail:
     from: 'michele.boscolo@eni.com'
@@ -10,7 +11,7 @@ defaults: &defaults
 development:
   <<: *defaults
   database:
-    name: 'transmission'
+    name: 'Ampere'
     collection: 'remit_centrali'
     collection_last: 'remit_centrali_last'
     adress: '127.0.0.1:27030'
@@ -19,6 +20,7 @@ development:
     file_dt_upd: './lastupdate_dev'
     file_csv: './csv/remit.csv'
     csv_esporta: './csv/export.csv'
+    download: './download_dev/'
 
 test:
   <<: *defaults
@@ -26,16 +28,17 @@ test:
 production:
   <<: *defaults
   database:
-    name: 'transmission'
+    name: 'Ampere'
     collection: 'remit_centrali'
     collection_last: 'remit_centrali_last'
-    adress1: '10.130.96.220:27018'
-    adress2: '10.130.96.220:27019'
+    # adress1: '10.130.96.220:27018'
+    # adress2: '10.130.96.220:27019'
     adress3: '10.130.96.144:27018'
     log_level: "::Logger::INFO"
   path:
     file_dt_upd: './lastupdate'
     file_csv: './csv/remit.csv'
     csv_esporta: './csv/export.csv'
+    download: './download/'
 
 
