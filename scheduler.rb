@@ -68,9 +68,9 @@ def scheduler.on_error(job, error)
   $logger.warn("intercepted error in #{job.id}: #{error.message}")
    end
 
-task = Handler.new(action: 'rss')
+task = Handler.new(action: 'xml')
 
-scheduler.every('5m', task, timeout: '5m', tag: 'Download Rss')
+scheduler.every('30m', task, timeout: '10m', tag: 'Download Xml')
 
 $logger.info 'Start Scheduler'
 
