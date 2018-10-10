@@ -1,3 +1,6 @@
+## 1.0.4 (2018-10-10)
+
+
 ## 1.0.9 (2018-10-10)
 ### Added
 -  Aggiunto supporto per lo scaricamento e lettura degli xml  ( 2018-10-10 ) [ sphynx79]
