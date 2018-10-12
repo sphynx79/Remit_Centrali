@@ -4,11 +4,21 @@
 
 class UpdateLastRemitCollection
   extend LightService::Action
-  expects :collection
+  expects :collection, :collection_last
 
   executed do |ctx|
     logger.debug('Eseguo update a DB della collection remit_centrali_last')
-    ctx.collection.aggregate(pipeline, {bypassDocumentValidation: true}).allow_disk_use(true).count
+    # documents = ctx.collection.aggregate(pipeline).allow_disk_use(true).count
+    indexes = []
+    documents = ctx.collection.aggregate(pipeline).allow_disk_use(false).to_a
+    ctx.collection_last.drop()
+    ctx.collection_last.insert_many(documents, write: { w: 0 })
+    ctx.collection_last.indexes.create_one({ :data_hour => 1 }, {background: true, name: "data_hour"})
+    
+    # ctx.collection_last.indexes.each { |x| indexes << x["key"] if x["key"].keys[0] != "_id" }
+    # indexes.each do |index|
+    #   ctx.collection_last.indexes.create_one(index, {background: true, name: index.keys[0]})
+    # end
   end
 
   def self.pipeline
@@ -69,11 +79,9 @@ class UpdateLastRemitCollection
       },
     }
 
-    pipeline << {
-      "$out": RemitCentrali::Config.database.collection_last,
-    }
-
-    pipeline
+    # pipeline << {
+    #   "$out": RemitCentrali::Config.database.collection_last,
+    # }
   end
 
   private_class_method :pipeline

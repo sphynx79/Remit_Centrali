@@ -31,8 +31,8 @@ module XmlHelper
             ]),
           ]),
           reduce_if(-> (ctx) { ctx.has_new_remit }, [
-            UpdateLastRemitCollection,
             GetCollectionLast,
+            UpdateLastRemitCollection,
             UpdateZonaHourlyCollection,
             UpdateTecnologiaHourlyCollection,
             UpdateZonaDailyCollection,

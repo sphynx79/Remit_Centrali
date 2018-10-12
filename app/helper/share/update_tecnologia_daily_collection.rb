@@ -8,7 +8,12 @@ class UpdateTecnologiaDailyCollection
 
   executed do |ctx|
     logger.debug('Eseguo update a DB della collection remit_centrali_daily_tecnologia')
-    ctx.collection_last.aggregate(pipeline, {bypassDocumentValidation: true}).allow_disk_use(true).count
+    #ctx.collection_last.aggregate(pipeline, {bypassDocumentValidation: true}).allow_disk_use(true).count
+    indexes = []
+    documents = ctx.collection.aggregate(pipeline).allow_disk_use(true).to_a
+    ctx.collection_last.drop()
+    ctx.collection_last.insert_many(documents, write: {w: 0})
+    ctx.collection_last.indexes.create_one({:dataTime => 1}, {background: true, name: 'dataTime'})
   end
 
   def self.pipeline
@@ -97,9 +102,9 @@ class UpdateTecnologiaDailyCollection
 
     pipeline << {"$sort": {"dataTime": 1}}
 
-    pipeline << {
-      "$out": 'remit_centrali_daily_tecologia',
-    }
+    # pipeline << {
+    #   "$out": 'remit_centrali_daily_tecologia',
+    # }
   end
 
   private_class_method :pipeline
