@@ -1,3 +1,14 @@
+## 1.1.0 (2018-10-12)
+### Added
+-  Aggiunto supporto per lo scaricamento e lettura degli xml  ( 2018-10-10 ) [ sphynx79]
+-  ottimizzato il backend i report sul frontend, in pratica creo dei micro db preaggregati  ( 2018-10-05 ) [ sphynx79]
+
+### Changed
+-  Ottimizzato pipeline per prendere solo last a diversi stati di granularita  ( 2018-08-26 ) [ sphynx79]
+-  cambiato algoritmo dentro il db per gestire le remit  ( 2018-08-19 ) [ sphynx79]
+
+
+
 ## 1.0.4 (2018-10-10)
 
 
