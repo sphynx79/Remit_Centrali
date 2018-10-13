@@ -4,16 +4,16 @@
 
 class UpdateZonaHourlyCollection
   extend LightService::Action
-  expects :collection_last
+  expects :collection_last, :db
 
   executed do |ctx|
     logger.debug('Eseguo update a DB della collection remit_centrali_hourly_zona')
     #ctx.collection_last.aggregate(pipeline, {bypassDocumentValidation: true}).allow_disk_use(true).count
-    indexes = []
-    documents = ctx.collection.aggregate(pipeline).allow_disk_use(true).to_a
-    ctx.collection_last.drop()
-    ctx.collection_last.insert_many(documents, write: {w: 0})
-    ctx.collection_last.indexes.create_one({:dataTime => 1}, {background: true, name: 'dataTime'})
+    documents = ctx.collection_last.aggregate(pipeline).allow_disk_use(true).to_a
+    collection = ctx.db.collection(collection: 'remit_centrali_hourly_zona')
+    collection.drop()
+    collection.insert_many(documents, write: {w: 0})
+    collection.indexes.create_one({:dataTime => 1}, {background: true, name: 'dataTime'})
   end
 
   def self.pipeline
