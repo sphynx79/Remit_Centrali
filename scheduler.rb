@@ -62,7 +62,7 @@ class Handler
 end
 
 # @todo diminuire la frequenza di rufus-scheduler
-scheduler = Rufus::Scheduler.new(frequency: '3m')
+scheduler = Rufus::Scheduler.new(frequency: '10m')
 
 def scheduler.on_error(job, error)
   $logger.warn("intercepted error in #{job.id}: #{error.message}")
@@ -70,7 +70,7 @@ def scheduler.on_error(job, error)
 
 task = Handler.new(action: 'xml')
 
-scheduler.every('30m', task, timeout: '10m', tag: 'Download Xml')
+scheduler.every('50m', task, timeout: '15m', tag: 'Download Xml')
 
 $logger.info 'Start Scheduler'
 

@@ -10,27 +10,27 @@ module XmlHelper
   def self.call(env)
     result = with({has_new_remit: false}).reduce(
       [
-        # GetNewXml,
-        # GetLastXml,
-        # ParseNewXml,
-        # ParseLastXml,
-        # CheckDiff,
-        # reduce_if(-> (ctx) { !ctx.remits.empty? }, [
-        #   WriteXml,
+        GetNewXml,
+        GetLastXml,
+        ParseNewXml,
+        ParseLastXml,
+        CheckDiff,
+        reduce_if(-> (ctx) { !ctx.remits.empty? }, [
+          WriteXml,
           ConnectDb,
           GetCollection,
-        #   GetAnagrafica,
-        #   iterate(:remits, [
-        #     RemitExist,
-        #     reduce_if(-> (ctx) { !ctx.remit_exist }, [
-        #       SplitInDayAndHour,
-        #       CheckLastHour,
-        #       CheckLastDay,
-        #       CheckLastDoc,
-        #       InsertDocDb,
-        #     ]),
-        #   ]),
-          # reduce_if(-> (ctx) { ctx.has_new_remit }, [
+          GetAnagrafica,
+          iterate(:remits, [
+            RemitExist,
+            reduce_if(-> (ctx) { !ctx.remit_exist }, [
+              SplitInDayAndHour,
+              CheckLastHour,
+              CheckLastDay,
+              CheckLastDoc,
+              InsertDocDb,
+            ]),
+          ]),
+          reduce_if(-> (ctx) { ctx.has_new_remit }, [
             SetPipelineLastRemit,
             SetPipelineTecHourly,
             SetPipelineTecDaily,
@@ -42,11 +42,8 @@ module XmlHelper
             UpdateTecnologiaDailyCollection,
             UpdateZonaHourlyCollection,
             UpdateZonaDailyCollection,
-
-            # GetCollectionLast,
-            # UpdateLastRemitCollection,
-          # ]),
-        # ]),
+          ]),
+        ]),
       ]
     )
     if result.failure?
