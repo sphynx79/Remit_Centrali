@@ -10,35 +10,43 @@ module XmlHelper
   def self.call(env)
     result = with({has_new_remit: false}).reduce(
       [
-        GetNewXml,
-        GetLastXml,
-        ParseNewXml,
-        ParseLastXml,
-        CheckDiff,
-        reduce_if(-> (ctx) { !ctx.remits.empty? }, [
-          WriteXml,
+        # GetNewXml,
+        # GetLastXml,
+        # ParseNewXml,
+        # ParseLastXml,
+        # CheckDiff,
+        # reduce_if(-> (ctx) { !ctx.remits.empty? }, [
+        #   WriteXml,
           ConnectDb,
           GetCollection,
-          GetAnagrafica,
-          iterate(:remits, [
-            RemitExist,
-            reduce_if(-> (ctx) { !ctx.remit_exist }, [
-              SplitInDayAndHour,
-              CheckLastHour,
-              CheckLastDay,
-              CheckLastDoc,
-              InsertDocDb,
-            ]),
-          ]),
-          reduce_if(-> (ctx) { ctx.has_new_remit }, [
-            GetCollectionLast,
-            UpdateLastRemitCollection,
-            UpdateZonaHourlyCollection,
+        #   GetAnagrafica,
+        #   iterate(:remits, [
+        #     RemitExist,
+        #     reduce_if(-> (ctx) { !ctx.remit_exist }, [
+        #       SplitInDayAndHour,
+        #       CheckLastHour,
+        #       CheckLastDay,
+        #       CheckLastDoc,
+        #       InsertDocDb,
+        #     ]),
+        #   ]),
+          # reduce_if(-> (ctx) { ctx.has_new_remit }, [
+            SetPipelineLastRemit,
+            SetPipelineTecHourly,
+            SetPipelineTecDaily,
+            SetPipelineZonaHourly,
+            SetPipelineZonaDaily,
+            MergePipeline,
+            AggregatePipeline,
             UpdateTecnologiaHourlyCollection,
-            UpdateZonaDailyCollection,
             UpdateTecnologiaDailyCollection,
-          ]),
-        ]),
+            UpdateZonaHourlyCollection,
+            UpdateZonaDailyCollection,
+
+            # GetCollectionLast,
+            # UpdateLastRemitCollection,
+          # ]),
+        # ]),
       ]
     )
     if result.failure?
@@ -50,8 +58,8 @@ module XmlHelper
     end
   rescue StandardError => e
     # eliminare ultimo file scaricato
-    last_file_xml = Dir.glob("#{APP_ROOT}/#{RemitCentrali::Config.path.download}*.xml").max_by {|f|  File.stat(f).mtime}
-    FileUtils.rm_f(last_file_xml)
+    # last_file_xml = Dir.glob("#{APP_ROOT}/#{RemitCentrali::Config.path.download}*.xml").max_by {|f|  File.stat(f).mtime}
+    # FileUtils.rm_f(last_file_xml)
     msg = e.message + "\n"
     e.backtrace.each do |x|
       # msg += x + "\n" if x.include? APP_NAME

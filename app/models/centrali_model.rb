@@ -6,4 +6,5 @@ class CentraliModel < RemitCentrali::BaseModel
   def collection(collection: 'remit_centrali')
     client[collection]
   end
+    
 end

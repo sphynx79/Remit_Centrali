@@ -4,118 +4,16 @@
 
 class UpdateZonaDailyCollection
   extend LightService::Action
-  expects :collection_last, :db
+  expects :db, :aggragate_documents
 
   executed do |ctx|
-    logger.debug('Eseguo update a DB della collection remit_centrali_daily_zona')
-    # ctx.collection_last.aggregate(pipeline, {bypassDocumentValidation: true}).allow_disk_use(true).count
-    documents = ctx.collection_last.aggregate(pipeline).allow_disk_use(true).to_a
-    collection = ctx.db.collection(collection: 'remit_centrali_daily_zona')
-    collection.drop()
-    collection.insert_many(documents, write: {w: 0})
+    collection_name = RemitCentrali::Config.database.collection_centrali_daily_zona
+    logger.debug("Update a DB della collection #{collection_name}")
+    collection = ctx.db.collection(collection: collection_name)
+    collection.drop() if ctx.db.client.collections.map {|col| col.name}.include? collection_name
+    collection.insert_many(ctx.aggragate_documents[0]["zona_daily"], write: {w: 0})
     collection.indexes.create_one({:dataTime => 1}, {background: true, name: 'dataTime'})
   end
 
-  def self.pipeline
-    pipeline = []
-
-    pipeline << {
-      "$project": {
-        _id: 0,
-        year: {"$year": {date: '$data_hour', timezone: 'Europe/Rome'}},
-        month: {"$month": {date: '$data_hour', timezone: 'Europe/Rome'}},
-        dayOfMonth: {"$dayOfMonth": {date: '$data_hour', timezone: 'Europe/Rome'}},
-        data: '$data_hour',
-        zona: '$zona',
-        remit: '$remit',
-      },
-    }
-
-    pipeline << {
-      "$group": {
-        _id: {
-          year: '$year',
-          month: '$month',
-          dayOfMonth: '$dayOfMonth',
-          zona: '$zona',
-        },
-        totalremit: {
-          "$sum": '$remit',
-        },
-      },
-    }
-
-    pipeline << {
-      "$group": {
-        _id: {
-          year: '$_id.year',
-          month: '$_id.month',
-          dayOfMonth: '$_id.dayOfMonth',
-        },
-        zona: {
-          "$push": {
-            k: '$_id.zona',
-            v: {"$divide": ['$totalremit', 24]},
-          },
-        },
-      },
-    }
-
-    pipeline << {
-      "$replaceRoot": {
-        "newRoot": {
-          "$mergeObjects": [{
-            "$arrayToObject": '$zona',
-          },
-                            '$$ROOT'],
-        },
-      },
-    }
-
-    pipeline << {
-      "$project": {
-        _id: 0,
-        dataTime: {"$dateFromParts": {'year': '$_id.year', 'month': '$_id.month', 'day': '$_id.dayOfMonth'}},
-        brnn: {
-          "$ifNull": ['$BRNN', 0],
-        },
-        cnor: {
-          "$ifNull": ['$CNOR', 0],
-        },
-        csud: {
-          "$ifNull": ['$CSUD', 0],
-        },
-        fogn: {
-          "$ifNull": ['$FOGN', 0],
-        },
-        nord: {
-          "$ifNull": ['$NORD', 0],
-        },
-        prgp: {
-          "$ifNull": ['$PRGP', 0],
-        },
-        rosn: {
-          "$ifNull": ['$ROSN', 0],
-        },
-        sard: {
-          "$ifNull": ['$SARD', 0],
-        },
-        sici: {
-          "$ifNull": ['$SICI', 0],
-        },
-        sud: {
-          "$ifNull": ['$SUD', 0],
-        },
-      },
-    }
-
-    pipeline << {"$sort": {"dataTime": 1}}
-
-    # pipeline << {
-    #   "$out": 'remit_centrali_daily_zona',
-    # }
-  end
-
-  private_class_method :pipeline
 end
 

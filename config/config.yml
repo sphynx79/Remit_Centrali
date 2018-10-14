@@ -13,7 +13,10 @@ development:
   database:
     name: 'Ampere'
     collection: 'remit_centrali'
-    collection_last: 'remit_centrali_last'
+    collection_centrali_hourly_tecologia: 'remit_centrali_hourly_tecologia'
+    collection_centrali_daily_tecologia: 'remit_centrali_daily_tecologia'
+    collection_centrali_hourly_zona: 'remit_centrali_hourly_zona'
+    collection_centrali_daily_zona: 'remit_centrali_daily_zona'
     adress: '127.0.0.1:27030'
     log_level: "::Logger::INFO"
   path:
@@ -30,7 +33,10 @@ production:
   database:
     name: 'Ampere'
     collection: 'remit_centrali'
-    collection_last: 'remit_centrali_last'
+    collection_centrali_hourly_tecologia: 'remit_centrali_hourly_tecologia'
+    collection_centrali_daily_tecologia: 'remit_centrali_daily_tecologia'
+    collection_centrali_hourly_zona: 'remit_centrali_hourly_zona'
+    collection_centrali_daily_zona: 'remit_centrali_daily_zona'
     adress1: '10.130.96.220:27018'
     adress2: '10.130.96.220:27019'
     adress3: '10.130.96.144:27018'
