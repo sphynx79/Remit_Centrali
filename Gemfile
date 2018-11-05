@@ -6,7 +6,7 @@ ruby '2.5.1'
 
 source 'https://rubygems.org'
 
-gem 'activesupport', '~>5.2.0', require: false
+gem 'activesupport', '~>5.2.1', require: false
 gem 'gli', '~>2.18.0'
 gem 'light-service', '~>0.11.0'
 gem 'mongo', '~>2.6.2'
@@ -14,8 +14,10 @@ gem 'oj', '~>3.6.11'
 gem 'ox', '~>2.10.0'
 gem 'pastel', '~>0.7.2'
 gem 'rcsv', '~>0.3.1'
-gem 'rufus-scheduler', '~>3.5.1'
+gem 'rufus-scheduler', '~>3.5.1', require: false
 gem 'settingslogic', '~>2.0.9'
+gem 'tzinfo', '~>1.2.5'
+gem 'tzinfo-data', '~>1.2018.7'
 
 group :development, :test do
   gem 'awesome_print', '~>1.8.0'

@@ -14,6 +14,7 @@ class SetPipelineTecDaily
   def self.pipeline
     pipeline = []
 
+    # raggruppo e sommo le ore del giorno pensando giàal timezone italiano
     pipeline << {
       "$project": {
         _id: 0,

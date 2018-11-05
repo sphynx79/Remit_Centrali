@@ -31,6 +31,7 @@ module XmlHelper
             ]),
           ]),
           reduce_if(-> (ctx) { ctx.has_new_remit }, [
+            SetPipelineLastRemitDaily,
             SetPipelineLastRemit,
             SetPipelineTecHourly,
             SetPipelineTecDaily,
@@ -38,6 +39,8 @@ module XmlHelper
             SetPipelineZonaDaily,
             MergePipeline,
             AggregatePipeline,
+            AggregatePipelineLastDaily,
+            UpdateLastRemitDailyCollection,
             UpdateTecnologiaHourlyCollection,
             UpdateTecnologiaDailyCollection,
             UpdateZonaHourlyCollection,

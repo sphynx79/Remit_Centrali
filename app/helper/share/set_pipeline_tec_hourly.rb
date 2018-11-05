@@ -14,6 +14,8 @@ class SetPipelineTecHourly
   def self.pipeline
     pipeline = []
 
+    # raggruppo e sommo le ore lasciando il formato UTC
+    # dopo nel server le trasformo in formato italiano
     pipeline << {
       "$group": {
         _id: {

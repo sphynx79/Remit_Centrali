@@ -14,19 +14,16 @@ require 'bundler/setup'
 Bundler.require(:default, env.to_sym)
 require 'active_support/core_ext/string/inflections'
 require 'net/http'
+require 'tzinfo'
 require 'lib/remit_centrali'
-# require 'gli'
-# require 'light-service'
-# require 'settingslogic'
-# require 'mongo'
-# require 'pastel'
-# require 'logger'
-# require 'ox'
-# require 'oj'
+
 
 APP_ROOT = Pathname.new(File.expand_path('.', __dir__))
 APP_NAME = APP_ROOT.parent.basename.to_s
 APP_VERSION = '1'
+ENV["TZ"] = "UTC"
+TZ = TZInfo::Timezone.get('Europe/Rome')
+
 CONFIG = File.join(__dir__, 'config.yml')
 
 module RemitCentrali

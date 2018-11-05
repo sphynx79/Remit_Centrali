@@ -42,7 +42,7 @@ class InsertDocDb
     # result = ctx.collection.bulk_write(bulk_up)
     # logger.debug("Inserito #{result.upserted_count} doc")
     # logger.debug("Modificato #{result.modified_count} doc")
-    send_mail(etso_no_censiti) unless etso_no_censiti.empty?
+    # send_mail(etso_no_censiti) unless etso_no_censiti.empty?
   end
 
   def self.send_mail(etso_no_censiti)

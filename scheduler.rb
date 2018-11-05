@@ -31,7 +31,7 @@ end
 # STDOUT.sync = true
 # STDERR.sync = true
 
-ENV['TZ'] = 'UTC-2'
+ENV["TZ"] = "UTC"
 
 class Handler
   attr_reader :action
