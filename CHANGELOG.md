@@ -1,3 +1,9 @@
+## 1.1.3 (2018-11-05)
+### Added
+-  Aggiunto che crea delle collection nel mio DB gia pronte per i report e le remit delle centrali nel server  ( 2018-11-05 ) [ sphynx79]
+
+
+
 ## 1.1.2 (2018-10-14)
 
 
