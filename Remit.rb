@@ -3,11 +3,14 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.unshift '.'
-the_rest = ARGV
 
-# p first_arg
-env_param = the_rest.select{|x|x[/enviroment/]}[0]
-env = env_param.nil? ? "development" : env_param.split("=")[1]
+# faccio il parse del paramentro enviroment per vedere quale gemme da caricare
+parsed_env = ARGV.join(' ')[/(-e\s|--enviroment=)(production|development)/]
+env = if parsed_env.nil?
+        'development'
+      else
+        parsed_env.split(/(\s|=)/).last == 'production' ? 'production' : 'development'
+      end
 
 require 'rubygems'
 require 'bundler/setup'
@@ -17,12 +20,11 @@ require 'net/http'
 require 'tzinfo'
 require 'lib/remit_centrali'
 
-
-APP_ROOT = Pathname.new(File.expand_path('.', __dir__))
-APP_NAME = APP_ROOT.parent.basename.to_s
-APP_VERSION = '1'
-ENV["TZ"] = "UTC"
-TZ = TZInfo::Timezone.get('Europe/Rome')
+APP_ROOT    = Pathname.new(File.expand_path('.', __dir__))
+APP_NAME    = APP_ROOT.parent.basename.to_s
+APP_VERSION = File.read('./VERSION').strip
+TZ          = TZInfo::Timezone.get('Europe/Rome')
+ENV['TZ']   = 'UTC'
 
 CONFIG = File.join(__dir__, 'config.yml')
 

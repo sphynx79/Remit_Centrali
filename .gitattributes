@@ -9,7 +9,6 @@ download.bat export-ignore
 converti.bat export-ignore
 scheduler.bat export-ignore
 download_dev export-ignore
-download export-ignore
 gui.bat export-ignore
 remit.xlsm export-ignore
 lastupdate_dev export-ignore

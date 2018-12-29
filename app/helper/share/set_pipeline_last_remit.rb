@@ -55,6 +55,10 @@ class SetPipelineLastRemit
     }
 
     pipeline << {
+      "$sort": {"hours.data_hour": 1},
+    }
+
+    pipeline << {
       "$project": {
         "_id": 0,
         "msg_id": '$msg_id',
@@ -66,6 +70,14 @@ class SetPipelineLastRemit
         "zona": '$zona',
         "remit": '$hours.remit',
         "data_hour": '$hours.data_hour',
+        "data": {"$dateToString": {
+            format: "%d-%m-%Y",
+            date: '$hours.data_hour',
+            timezone: 'Europe/Rome',
+        }},
+        "year": {"$year": {date: '$hours.data_hour', timezone: 'Europe/Rome'}},
+        "month": {"$month": {date: '$hours.data_hour', timezone: 'Europe/Rome'}},
+        "dayOfMonth": {"$dayOfMonth": {date: '$hours.data_hour', timezone: 'Europe/Rome'}},
       },
     }
 

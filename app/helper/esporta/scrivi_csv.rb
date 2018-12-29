@@ -2,6 +2,8 @@
 # warn_indent: true
 # frozen_string_literal: true
 
+require 'csv'
+
 class ScriviCsv
   extend LightService::Action
   expects :remits_hourly
