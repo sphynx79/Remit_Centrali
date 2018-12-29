@@ -1,3 +1,9 @@
+## 1.1.4 (2018-12-29)
+### Added
+-  Aggiunto creazione della collection per la cache delle remit delle centrali  ( 2018-12-29 ) [ sphynx79]
+
+
+
 ## 1.1.3 (2018-11-05)
 ### Added
 -  Aggiunto che crea delle collection nel mio DB gia pronte per i report e le remit delle centrali nel server  ( 2018-11-05 ) [ sphynx79]
