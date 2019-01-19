@@ -37,11 +37,13 @@ module XmlHelper
             SetPipelineTecDaily,
             SetPipelineZonaHourly,
             SetPipelineZonaDaily,
-            MergePipeline,
-            AggregatePipeline,
             AggregatePipelineLast,
-            # UpdateLastRemitDailyCollection,
             UpdateLastRemitCollection,
+            AggregatePipelineTecHourly,
+            AggregatePipelineTecDaily,
+            AggregatePipelineZonaHourly,
+            AggregatePipelineZonaDaily,
+            # UpdateLastRemitDailyCollection,
             UpdateTecnologiaHourlyCollection,
             UpdateTecnologiaDailyCollection,
             UpdateZonaHourlyCollection,
@@ -59,12 +61,12 @@ module XmlHelper
     end
   rescue StandardError => e
     # eliminare ultimo file scaricato
-    # last_file_xml = Dir.glob("#{APP_ROOT}/#{RemitCentrali::Config.path.download}*.xml").max_by {|f|  File.stat(f).mtime}
-    # FileUtils.rm_f(last_file_xml)
+    last_file_xml = Dir.glob("#{APP_ROOT}/#{RemitCentrali::Config.path.download}*.xml").max_by {|f|  File.stat(f).mtime}
+    FileUtils.rm_f(last_file_xml)
     msg = e.message + "\n"
     e.backtrace.each do |x|
-      # msg += x + "\n" if x.include? APP_NAME
-      msg += x + "\n"
+      msg += x + "\n" if x.include? APP_NAME
+      # msg += x + "\n"
     end
     logger.fatal msg
     RemitCentrali::Mail.call('Errore imprevisto nella lettura XML', msg) if env[:global_options][:mail]

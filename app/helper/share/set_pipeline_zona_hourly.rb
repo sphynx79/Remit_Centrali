@@ -53,6 +53,7 @@ class SetPipelineZonaHourly
       "$project": {
         _id: 0,
         dataTime: '$_id',
+        data: { "$dateToString": { format: "%d-%m-%Y %H:%M:%S", date: "$_id",  timezone: 'Europe/Rome'}  },
         brnn: {
           "$ifNull": ['$BRNN', 0],
         },

@@ -4,15 +4,16 @@
 
 class UpdateTecnologiaHourlyCollection
   extend LightService::Action
-  expects :db, :aggragate_documents
+  expects :db, :aggragate_documents_tec_hourly
 
   executed do |ctx|
-    collection_name = RemitCentrali::Config.database.collection_centrali_hourly_tecologia
+    collection_name = RemitCentrali::Config.database.collection_centrali_tecnologia_hourly
     logger.debug("Update a DB della collection #{collection_name}")
     collection = ctx.db.collection(collection: collection_name)
     collection.drop() if ctx.db.client.collections.map {|col| col.name}.include? collection_name
-    collection.insert_many(ctx.aggragate_documents[0]["tec_hourly"], write: {w: 0})
-    collection.indexes.create_one({:dataTime => 1}, {background: true, name: 'dataTime'})
+    collection.insert_many(ctx.aggragate_documents_tec_hourly, write: {w: 0})
+    collection.indexes.create_one({:data => 1}, {background: true, name: 'data'})
+    collection.indexes.create_one({:dataTime => 1}, {background: true, name: 'datatime'})
   end
 
 end

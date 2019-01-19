@@ -70,7 +70,28 @@ class SetPipelineZonaDaily
     pipeline << {
       "$project": {
         _id: 0,
-        dataTime: {"$dateFromParts": {'year': '$_id.year', 'month': '$_id.month', 'day': '$_id.dayOfMonth'}},
+        dataTime: {"$dateFromParts": {"year": "$_id.year", "month": "$_id.month", "day": "$_id.dayOfMonth"}},
+        data: { 
+            "$concat": [
+                { "$cond": [
+                    { "$lte": [ "$_id.dayOfMonth", 9 ] },
+                    { "$concat": [
+                        "0", { "$substr": [ { "$toString": "$_id.dayOfMonth" }, 0, 2 ] }
+                    ]},
+                    { "$substr": [ { "$toString": "$_id.dayOfMonth" }, 0, 2 ] }
+                ]},
+                "-",
+                { "$cond": [
+                    { "$lte": [ "$_id.month", 9 ] },
+                    { "$concat": [
+                        "0", { "$substr": [ { "$toString": "$_id.month" }, 0, 2 ] }
+                    ]},
+                    { "$substr": [ { "$toString": "$_id.month" }, 0, 2 ] }
+                ]},
+                "-",
+                { "$toString": "$_id.year" }
+            ]
+        },
         brnn: {
           "$ifNull": ['$BRNN', 0],
         },

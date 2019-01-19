@@ -21,7 +21,6 @@ class SetPipelineTecDaily
         year: {"$year": {date: '$data_hour', timezone: 'Europe/Rome'}},
         month: {"$month": {date: '$data_hour', timezone: 'Europe/Rome'}},
         dayOfMonth: {"$dayOfMonth": {date: '$data_hour', timezone: 'Europe/Rome'}},
-        data: '$data_hour',
         tipo: '$tipo',
         remit: '$remit',
       },
@@ -71,7 +70,29 @@ class SetPipelineTecDaily
     pipeline << {
       "$project": {
         _id: 0,
-        dataTime: {"$dateFromParts": {'year': '$_id.year', 'month': '$_id.month', 'day': '$_id.dayOfMonth'}},
+        dataTime: {"$dateFromParts": {"year": "$_id.year", "month": "$_id.month", "day": "$_id.dayOfMonth"}},
+        # data: {"$concat": [ { "$toString": "$_id.dayOfMonth" } , "-" ,  { "$toString": "$_id.month" } , "-", { "$toString": "$_id.year" }]},
+        data: { 
+            "$concat": [
+                { "$cond": [
+                    { "$lte": [ "$_id.dayOfMonth", 9 ] },
+                    { "$concat": [
+                        "0", { "$substr": [ { "$toString": "$_id.dayOfMonth" }, 0, 2 ] }
+                    ]},
+                    { "$substr": [ { "$toString": "$_id.dayOfMonth" }, 0, 2 ] }
+                ]},
+                "-",
+                { "$cond": [
+                    { "$lte": [ "$_id.month", 9 ] },
+                    { "$concat": [
+                        "0", { "$substr": [ { "$toString": "$_id.month" }, 0, 2 ] }
+                    ]},
+                    { "$substr": [ { "$toString": "$_id.month" }, 0, 2 ] }
+                ]},
+                "-",
+                { "$toString": "$_id.year" }
+            ]
+        },
         termico: {
           "$ifNull": ['$TERMICO', 0],
         },

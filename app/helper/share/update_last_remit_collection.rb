@@ -12,7 +12,7 @@ class UpdateLastRemitCollection
     collection = ctx.db.collection(collection: collection_name)
     collection.drop() if ctx.db.client.collections.map {|col| col.name}.include? collection_name
     collection.insert_many(ctx.aggragate_last_documents, write: {w: 0})
-    # collection.indexes.create_one({:dataTime => 1}, {background: true, name: 'dataTime'})
+    collection.indexes.create_one({:data => 1}, {background: true, name: 'data'})
   end
 end
 
