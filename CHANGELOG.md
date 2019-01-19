@@ -1,3 +1,9 @@
+## 1.1.5 (2019-01-19)
+### Changed
+-  ottimizzato la creazione delle collection per la cache  ( 2019-01-19 ) [ sphynx79]
+
+
+
 ## 1.1.4 (2018-12-29)
 ### Added
 -  Aggiunto creazione della collection per la cache delle remit delle centrali  ( 2018-12-29 ) [ sphynx79]
