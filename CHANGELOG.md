@@ -1,3 +1,9 @@
+## 1.1.6 (2019-03-13)
+### Changed
+-  Passato parametro per export all remit  ( 2019-03-13 ) [ sphynx79]
+
+
+
 ## 1.1.5 (2019-01-19)
 ### Changed
 -  ottimizzato la creazione delle collection per la cache  ( 2019-01-19 ) [ sphynx79]
