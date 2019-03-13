@@ -82,8 +82,8 @@ module RemitCentrali
   desc 'Esporta in csv'
   long_desc %(Esegue una esportazione delle remit centrali dal db)
   command :esporta do |c|
-    c.desc 'tipo di esportazione (dismissed, active)'
-    c.flag %i[t type], required: false, default_value: ['active'], type: Array
+    c.desc 'tipo di esportazione (dismissed, active, all)'
+    c.flag %i[t type], required: false, default_value: ['all'], type: Array
 
     c.desc 'data di inizio'
     c.flag %i[sd start_date], required: false, type: String

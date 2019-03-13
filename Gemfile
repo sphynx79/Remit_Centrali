@@ -2,15 +2,15 @@
 # warn_indent: true
 # frozen_string_literal: true
 
-ruby '2.5.1'
+ruby '>=2.5.1'
 
 source 'https://rubygems.org'
 
 gem 'activesupport', '~>5.2.1', require: false
 gem 'gli', '~>2.18.0'
 gem 'light-service', '~>0.11.0'
-gem 'mongo', '~>2.6.2'
-gem 'oj', '~>3.7.5'
+gem 'mongo', '~>2.7.0'
+gem 'oj', '~>3.7.8'
 gem 'ox', '~>2.10.0'
 gem 'pastel', '~>0.7.2'
 gem 'rcsv', '~>0.3.1'
@@ -21,14 +21,13 @@ gem 'tzinfo-data', '~>1.2018.7'
 
 group :development, :test do
   gem 'awesome_print', '~>1.8.0'
-  gem 'byebug', '~>10.0.2'
   gem 'colorize', '~>0.8.1'
-  gem 'ffi', '~>1.9.25'
+  gem 'ffi', '~>1.10.0'
   gem 'hirb', '~>0.7.3'
   gem 'looksee', '~>4.0.0'
-  gem 'pry', '~>0.11.3'
+  gem 'pry', '~>0.12.2'
   gem 'pry-bond', '~>0.0.1'
   gem 'pry-byebug', '~>3.6.0'
   gem 'pry-clipboard', '~>0.1.1'
-  gem 'pry-inline', '~>1.0.4'
+  gem 'pry-state', '~>0.1.10'
 end

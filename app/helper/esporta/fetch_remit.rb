@@ -13,7 +13,7 @@ class FetchRemit
     end_dt = Date.parse(ctx.end_date)
     collection = ctx.db.collection(collection: RemitCentrali::Config.database.collection)
     pipeline = []
-    pipeline << { :$match => { "event_status": ctx.type[0].capitalize } } if ctx.type.length == 1
+    pipeline << { :$match => { "event_status": ctx.type[0].capitalize } } unless ctx.type[0] == 'all'
     pipeline << { :$match => { :$or => [{ :$and => [{ "dt_start": { :$gte => start_dt } }, { "dt_start": { :$lte => end_dt } }] }, { "dt_start": { :$lte => start_dt }, "dt_end": { :$gte => start_dt } }] } }
     pipeline << { "$project": {
       "_id": 0,
