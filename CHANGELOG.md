@@ -1,3 +1,9 @@
+## 1.1.7 (2019-05-24)
+### Updated
+-  Aggiornato ruby + alcune gemme  ( 2019-05-24 ) [ sphynx79]
+
+
+
 ## 1.1.6 (2019-03-13)
 ### Changed
 -  Passato parametro per export all remit  ( 2019-03-13 ) [ sphynx79]
