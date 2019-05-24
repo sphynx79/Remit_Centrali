@@ -20,11 +20,11 @@ require 'net/http'
 require 'tzinfo'
 require 'lib/remit_centrali'
 
-APP_ROOT    = Pathname.new(File.expand_path('.', __dir__))
-APP_NAME    = APP_ROOT.parent.basename.to_s
+APP_ROOT = Pathname.new(File.expand_path('.', __dir__))
+APP_NAME = APP_ROOT.parent.basename.to_s
 APP_VERSION = File.read('./VERSION').strip
-TZ          = TZInfo::Timezone.get('Europe/Rome')
-ENV['TZ']   = 'UTC'
+TZ = TZInfo::Timezone.get('Europe/Rome')
+ENV['TZ'] = 'UTC'
 
 CONFIG = File.join(__dir__, 'config.yml')
 

@@ -66,7 +66,7 @@ scheduler = Rufus::Scheduler.new(frequency: '10m')
 
 def scheduler.on_error(job, error)
   $logger.warn("intercepted error in #{job.id}: #{error.message}")
-   end
+end
 
 task = Handler.new(action: 'xml')
 

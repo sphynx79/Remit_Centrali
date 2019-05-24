@@ -17,6 +17,6 @@ class ScriviCsv
       csv << doc.values
       num_rec += 1
     end
-    logger.debug("Esportato #{num_rec} righe")
+    logger.debug("Esportato #{num_rec} righe nel file #{csv_path}")
   end
 end
