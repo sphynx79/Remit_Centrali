@@ -6,7 +6,7 @@ ruby '>=2.6.3'
 
 source 'https://rubygems.org'
 
-gem 'activesupport', '~>5.2.1', require: false
+gem 'activesupport', '~>5.2.4', require: false
 gem 'gli', '~>2.18.0'
 gem 'light-service', '~>0.11.0'
 gem 'mongo', '~>2.8.0'
