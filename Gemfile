@@ -16,7 +16,7 @@ gem 'pastel', '~>0.7.2'
 gem 'rcsv', '~>0.3.1'
 gem 'rufus-scheduler', '~>3.6.0', require: false
 gem 'settingslogic', '~>2.0.9'
-gem 'tzinfo', '~>1.2.5'
+gem 'tzinfo', '~>1.2.10'
 gem 'tzinfo-data', '~>1.2018.7'
 
 group :development, :test do

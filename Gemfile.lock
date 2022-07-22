@@ -76,7 +76,7 @@ GEM
     settingslogic (2.0.9)
     thread_safe (0.3.6)
     tty-color (0.4.3)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     tzinfo-data (1.2018.9)
       tzinfo (>= 1.0.0)
@@ -109,7 +109,7 @@ DEPENDENCIES
   rufo (~> 0.7)
   rufus-scheduler (~> 3.6.0)
   settingslogic (~> 2.0.9)
-  tzinfo (~> 1.2.5)
+  tzinfo (~> 1.2.10)
   tzinfo-data (~> 1.2018.7)
 
 RUBY VERSION
